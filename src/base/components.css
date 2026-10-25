@@ -4,9 +4,18 @@
 
 body,
 .theme-dark {
-  --text-brand: var(--my-accent);
+  /* Pink interactive backgrounds */
+  --background-modifier-hover: #493841;
+  --background-modifier-active: #55404c;
+  --background-modifier-selected: #493841;
+
+  --bg-overlay-hover: rgba(217, 174, 191, 0.1);
+  --bg-overlay-active: rgba(217, 174, 191, 0.16);
+  --bg-overlay-selected: rgba(217, 174, 191, 0.14);
+
+  /* Links */
   --text-link: var(--my-accent);
-  --background-modifier-hover: #393039;
+  --text-brand: var(--my-accent);
 }
 
 /* ========================================
@@ -26,16 +35,32 @@ body,
   color: var(--my-accent) !important;
 }
 
-/* Both icons sharing this Discord class */
+/* Add conversation icon */
 #app-mount svg.privateChannelRecipientsInviteButtonIcon__99e7c {
   color: var(--my-accent) !important;
   transition: color 160ms ease;
 }
 
-/* Hover */
 #app-mount svg.privateChannelRecipientsInviteButtonIcon__99e7c:hover {
   color: var(--my-accent-hover) !important;
 }
+
+/* ========================================
+   SIDEBAR NAVIGATION HOVERS
+   ======================================== */
+
+/* Friends / Nitro Home / Shop / Quests */
+#app-mount
+  [class*="privateChannels"]
+  [class*="channel"]:hover
+  > [class*="interactive"] {
+  background-color: var(--my-selected) !important;
+}
+
+/*
+ * Do not add a background to .layout.
+ * This preserves custom Nitro nameplates.
+ */
 
 /* ========================================
    MESSAGE COMPOSER
@@ -47,7 +72,11 @@ body,
 }
 
 /* ========================================
-   USER CUSTOMIZATION
+   USER CUSTOMIZATION PROTECTION
    ======================================== */
 
-/* Preserve usernames, Nitro fonts and decorations. */
+/*
+ * Preserve usernames, custom fonts,
+ * Nitro nameplates, profile colors,
+ * banners and avatar decorations.
+ */
