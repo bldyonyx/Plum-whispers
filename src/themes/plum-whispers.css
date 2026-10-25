@@ -18,6 +18,7 @@
 @import "../base/chatbar.css";
 @import "../base/components.css";
 @import "../base/notifications.css";
+@import "../base/settings-controls.css";
 
 /* Optional effects */
 @import "../base/animations.css";

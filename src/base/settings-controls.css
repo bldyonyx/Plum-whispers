@@ -1,0 +1,156 @@
+/* ========================================
+   PLUM WHISPERS — SETTINGS CONTROLS
+   ======================================== */
+
+:root {
+  --pw-control-accent: #d9aebf;
+  --pw-control-accent-hover: #e6bfd0;
+  --pw-control-soft-rose: #c986a4;
+  --pw-control-off: #493841;
+  --pw-control-off-hover: #58424f;
+  --pw-control-text: #f5ecf4;
+  --pw-control-radio-border: #81717d;
+}
+
+/* ========================================
+   1. SWITCHES
+   ======================================== */
+
+/* OFF */
+
+#app-mount [class*="switchIndicator_a28278"] {
+  background-color: var(--pw-control-off) !important;
+}
+
+/* ON */
+
+#app-mount
+  [class*="switchIndicator_a28278"]:has(
+    [class*="thumb_a28278"][style*="left: 24px"]
+  ) {
+  background-color: var(--pw-control-accent) !important;
+}
+
+/* OFF hover */
+
+#app-mount
+  label[class*="container_a28278"]:hover
+  [class*="switchIndicator_a28278"]:not(
+    :has([class*="thumb_a28278"][style*="left: 24px"])
+  ) {
+  background-color: var(--pw-control-off-hover) !important;
+}
+
+/* ON hover */
+
+#app-mount
+  label[class*="container_a28278"]:hover
+  [class*="switchIndicator_a28278"]:has(
+    [class*="thumb_a28278"][style*="left: 24px"]
+  ) {
+  background-color: var(--pw-control-accent-hover) !important;
+}
+
+/* ========================================
+   2. SLIDERS
+   ======================================== */
+
+#app-mount [class*="barFill_"] {
+  background-color: var(--pw-control-soft-rose) !important;
+}
+
+#app-mount [role="slider"] [class*="grabber_"] {
+  background-color: var(--pw-control-text) !important;
+  border-color: var(--pw-control-soft-rose) !important;
+}
+
+/* ========================================
+   3. BUTTONS
+   ======================================== */
+
+#app-mount button:has([class*="buttonChildrenWrapper_"]) {
+  background-color: var(--pw-control-off) !important;
+  color: var(--pw-control-text) !important;
+}
+
+#app-mount button:has([class*="buttonChildrenWrapper_"]):hover {
+  background-color: #58424f !important;
+}
+
+#app-mount button:has([class*="buttonChildrenWrapper_"]):active {
+  background-color: #69475e !important;
+}
+
+/* ========================================
+   4. RADIO BUTTONS
+   ======================================== */
+
+/*
+ * Discord marks selected options with:
+ * data-selected="true"
+ *
+ * Disable native radio animations to
+ * prevent blue intermediate colors.
+ */
+
+#app-mount label[class*="radioGroupOption_"] [class*="radioIndicator_"],
+#app-mount label[class*="radioGroupOption_"] [class*="outerRadioBase_"],
+#app-mount label[class*="radioGroupOption_"] [class*="outerRadioFill_"],
+#app-mount label[class*="radioGroupOption_"] [class*="innerDotRadio_"] {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Default — unselected radio */
+
+#app-mount label[class*="radioGroupOption_"] [class*="outerRadioFill_"] {
+  fill: transparent !important;
+}
+
+/* Hide the inner dot when unselected */
+
+#app-mount
+  label[class*="radioGroupOption_"]:not([data-selected="true"])
+  [class*="innerDotRadio_"] {
+  fill: transparent !important;
+  opacity: 0 !important;
+}
+
+/* Selected radio fill */
+
+#app-mount
+  label[class*="radioGroupOption_"][data-selected="true"]
+  [class*="outerRadioFill_"] {
+  fill: var(--pw-control-accent) !important;
+}
+
+/* Selected radio hover */
+
+#app-mount
+  label[class*="radioGroupOption_"][data-selected="true"]:hover
+  [class*="outerRadioFill_"] {
+  fill: var(--pw-control-accent-hover) !important;
+}
+
+/* Unselected radio outline */
+
+#app-mount
+  label[class*="radioGroupOption_"]:not([data-selected="true"])
+  [class*="outerRadioBase_"] {
+  stroke: var(--pw-control-radio-border) !important;
+}
+
+/* Selected inner dot */
+
+#app-mount
+  label[class*="radioGroupOption_"][data-selected="true"]
+  [class*="innerDotRadio_"] {
+  fill: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* ========================================
+   5. REDUCED MOTION
+   ======================================== */
+
+/* Radio animations are already disabled. */
