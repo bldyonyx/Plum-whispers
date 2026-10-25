@@ -35,4 +35,90 @@
 
   /* Borders */
   --my-border: #342f35;
+
+  /* Rose Whisper — channels and friends; rose prune for direct messages */
+  --pw-rose-whisper-border: rgba(217, 174, 191, 0.38);
+  --pw-rose-whisper-glow: rgba(217, 174, 191, 0.12);
+  --pw-rose-active-border: rgba(232, 174, 201, 0.72);
+  --pw-rose-active-glow: rgba(217, 174, 191, 0.2);
+  --pw-dm-background: #58424f;
+
+  /* Mentioned messages — soft plum background and dusty-pink accent */
+  --pw-mentioned-background: rgba(105, 71, 94, 0.25);
+  --pw-mentioned-background-hover: rgba(105, 71, 94, 0.35);
+  --pw-mentioned-accent: #e8aec9;
+
+  /* Cherry Glow */
+  --pw-notification-background: #e65a8a;
+  --pw-notification-text: #ffffff;
+  --pw-notification-glow:
+    0 0 6px rgba(230, 90, 138, 0.55), 0 0 14px rgba(230, 90, 138, 0.28);
+
+  /* Lavender Mention */
+  --pw-mention-text: #e5d4ff;
+  --pw-mention-background: #59436f;
+  --pw-mention-border: #bca0e8;
+  --pw-mention-hover: #6b5283;
+  --pw-mention-glow:
+    inset 0 0 0 1px var(--pw-mention-border), 0 0 8px rgba(188, 160, 232, 0.22);
+
+  /* Existing settings-controls color settings */
+  --pw-control-accent: var(--my-accent);
+  --pw-control-accent-hover: var(--my-accent-hover);
+  --pw-control-soft-rose: #c986a4;
+  --pw-control-off: var(--my-selected);
+  --pw-control-off-hover: #58424f;
+  --pw-control-text: var(--my-text);
+  --pw-control-radio-border: #81717d;
+
+  /* Existing fonts color settings */
+  --username-color: #e8aec9;
+
+  /* components palette */
+  --pw-interactive-hover: var(--my-selected);
+  --pw-interactive-active: #55404c;
+  --pw-overlay-hover: rgba(217, 174, 191, 0.1);
+  --pw-overlay-active: rgba(217, 174, 191, 0.16);
+  --pw-overlay-selected: rgba(217, 174, 191, 0.14);
+  --pw-menu-item-background: #69475e;
+  --pw-menu-item-text: #f5c9dd;
+  --pw-menu-item-icon: #e8aec9;
+  --pw-message-actions-background: #382f38;
+  --pw-message-actions-border: #514650;
+  --pw-message-actions-shadow: rgba(0, 0, 0, 0.2);
+
+  /* messages palette */
+  --pw-link: #e65a8b;
+  --pw-link-hover: #ffe1f0;
+  --pw-link-glow-inner: rgba(255, 160, 210, 0.8);
+  --pw-link-glow-outer: rgba(230, 120, 190, 0.5);
+  --pw-reaction-background: #69475e;
+  --pw-reaction-border: #e8aec9;
+  --pw-reaction-text: #f5c9dd;
+  --pw-reaction-background-hover: #85566f;
+  --pw-reply-background: rgba(155, 70, 105, 0.16);
+  --pw-reply-background-hover: rgba(155, 70, 105, 0.24);
+  --pw-reply-accent: #c986a4;
+
+  /* panels palette */
+  --pw-member-hover: rgba(217, 174, 191, 0.12);
+  --pw-member-focus: rgba(217, 174, 191, 0.16);
+  --pw-navigation-glow: rgba(255, 130, 218, 0.2);
+  --pw-home-hover-glow: rgba(255, 130, 218, 0.25);
+
+  /* settings-controls palette */
+  --pw-control-button-hover: #58424f;
+  --pw-control-button-active: #69475e;
+  --pw-control-radio-dot: #ffffff;
+
+  /* decorative-fonts palette */
+  --pw-decorative-text: #e8aec9;
+  --pw-decorative-text-hover: #f5c9dd;
+
+  /* animations palette */
+  --pw-bloom-border: rgba(217, 174, 191, 0.45);
+  --pw-bloom-glow: rgba(217, 174, 191, 0.25);
+
+  /* Shared absence of paint; also used by texture gradients and radio fills. */
+  --pw-transparent: transparent;
 }

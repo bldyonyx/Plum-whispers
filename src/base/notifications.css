@@ -2,31 +2,6 @@
    PLUM WHISPERS — NOTIFICATIONS
    ======================================== */
 
-:root {
-  /* ========================================
-     CHERRY GLOW
-     ======================================== */
-
-  --pw-notification-background: #e65a8a;
-  --pw-notification-text: #ffffff;
-
-  --pw-notification-glow:
-    0 0 6px rgba(230, 90, 138, 0.55), 0 0 14px rgba(230, 90, 138, 0.28);
-
-  /* ========================================
-     LAVENDER MENTION
-     ======================================== */
-
-  --pw-mention-text: #e5d4ff;
-  --pw-mention-background: #59436f;
-  --pw-mention-border: #bca0e8;
-
-  --pw-mention-hover: #6b5283;
-
-  --pw-mention-glow:
-    inset 0 0 0 1px var(--pw-mention-border), 0 0 8px rgba(188, 160, 232, 0.22);
-}
-
 /* ========================================
    1. CHERRY GLOW — SERVER BADGES
    ======================================== */

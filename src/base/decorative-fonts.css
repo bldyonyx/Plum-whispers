@@ -21,7 +21,7 @@
   font-weight: 400 !important;
   line-height: 1.4;
   letter-spacing: 0.04em;
-  color: #e8aec9 !important;
+  color: var(--pw-decorative-text) !important;
   -webkit-text-stroke: 0;
 }
 
@@ -34,7 +34,7 @@
   [class*="containerDefault_"]
   [class*="mainContent_"]:hover
   [class*="overflow_"] {
-  color: #f5c9dd !important;
+  color: var(--pw-decorative-text-hover) !important;
 }
 
 /* ========================================
@@ -47,7 +47,7 @@
   font-weight: 400 !important;
   line-height: 1.4;
   letter-spacing: 0.04em;
-  color: #e8aec9 !important;
+  color: var(--pw-decorative-text) !important;
   -webkit-text-stroke: 0;
 }
 

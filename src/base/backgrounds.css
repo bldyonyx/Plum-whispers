@@ -51,7 +51,7 @@ body,
             100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
               100%
           ),
-        transparent
+        var(--pw-transparent)
       ),
       color-mix(
         in srgb,
@@ -60,7 +60,7 @@ body,
             100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
               100%
           ),
-        transparent
+        var(--pw-transparent)
       )
     ),
     url("../assets/textures/dots.jpg") !important;
@@ -86,7 +86,7 @@ body,
             100% - var(--texture-paws-enabled) * var(--texture-paws-opacity) *
               100%
           ),
-        transparent
+        var(--pw-transparent)
       ),
       color-mix(
         in srgb,
@@ -95,7 +95,7 @@ body,
             100% - var(--texture-paws-enabled) * var(--texture-paws-opacity) *
               100%
           ),
-        transparent
+        var(--pw-transparent)
       )
     ),
     url("../assets/textures/paws.jpg") !important;
@@ -111,7 +111,7 @@ body,
 #app-mount
   :is([class^="privateChannels_"], [class*=" privateChannels_"])
   > :is([class^="scroller_"], [class*=" scroller_"]) {
-  background-color: transparent !important;
+  background-color: var(--pw-transparent) !important;
 }
 
 /* ========================================
@@ -136,7 +136,7 @@ body,
             100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
               100%
           ),
-        transparent
+        var(--pw-transparent)
       ),
       color-mix(
         in srgb,
@@ -145,7 +145,7 @@ body,
             100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
               100%
           ),
-        transparent
+        var(--pw-transparent)
       )
     ),
     url("../assets/textures/dots.jpg") !important;
@@ -158,7 +158,7 @@ body,
   :is([class^="chatContent_"], [class*=" chatContent_"])
   :is([class^="messagesWrapper_"], [class*=" messagesWrapper_"])
   > :is([class^="scroller_"], [class*=" scroller_"]) {
-  background-color: transparent !important;
+  background-color: var(--pw-transparent) !important;
 }
 
 /* ========================================
@@ -180,7 +180,7 @@ body,
             100% - var(--texture-hearts-enabled) *
               var(--texture-hearts-opacity) * 100%
           ),
-        transparent
+        var(--pw-transparent)
       ),
       color-mix(
         in srgb,
@@ -189,7 +189,7 @@ body,
             100% - var(--texture-hearts-enabled) *
               var(--texture-hearts-opacity) * 100%
           ),
-        transparent
+        var(--pw-transparent)
       )
     ),
     url("../assets/textures/hearts.jpg") !important;
@@ -202,7 +202,7 @@ body,
   :is([class^="membersWrap_"], [class*=" membersWrap_"])
   :is([class^="members_"], [class*=" members_"])
   :is([class^="member_"], [class*=" member_"]):not(:hover):not(:focus-within) {
-  background-color: transparent !important;
+  background-color: var(--pw-transparent) !important;
 }
 
 /* ========================================
@@ -221,7 +221,7 @@ body,
             100% - var(--texture-hearts-enabled) *
               var(--texture-hearts-opacity) * 100%
           ),
-        transparent
+        var(--pw-transparent)
       ),
       color-mix(
         in srgb,
@@ -230,7 +230,7 @@ body,
             100% - var(--texture-hearts-enabled) *
               var(--texture-hearts-opacity) * 100%
           ),
-        transparent
+        var(--pw-transparent)
       )
     ),
     url("../assets/textures/hearts.jpg") !important;
@@ -255,7 +255,7 @@ body,
             100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
               100%
           ),
-        transparent
+        var(--pw-transparent)
       ),
       color-mix(
         in srgb,
@@ -264,7 +264,7 @@ body,
             100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
               100%
           ),
-        transparent
+        var(--pw-transparent)
       )
     ),
     url("../assets/textures/dots.jpg") !important;

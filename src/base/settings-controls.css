@@ -2,16 +2,6 @@
    PLUM WHISPERS — SETTINGS CONTROLS
    ======================================== */
 
-:root {
-  --pw-control-accent: #d9aebf;
-  --pw-control-accent-hover: #e6bfd0;
-  --pw-control-soft-rose: #c986a4;
-  --pw-control-off: #493841;
-  --pw-control-off-hover: #58424f;
-  --pw-control-text: #f5ecf4;
-  --pw-control-radio-border: #81717d;
-}
-
 /* ========================================
    1. SWITCHES
    ======================================== */
@@ -74,11 +64,11 @@
 }
 
 #app-mount button:has([class*="buttonChildrenWrapper_"]):hover {
-  background-color: #58424f !important;
+  background-color: var(--pw-control-button-hover) !important;
 }
 
 #app-mount button:has([class*="buttonChildrenWrapper_"]):active {
-  background-color: #69475e !important;
+  background-color: var(--pw-control-button-active) !important;
 }
 
 /* ========================================
@@ -104,7 +94,7 @@
 /* Default — unselected radio */
 
 #app-mount label[class*="radioGroupOption_"] [class*="outerRadioFill_"] {
-  fill: transparent !important;
+  fill: var(--pw-transparent) !important;
 }
 
 /* Hide the inner dot when unselected */
@@ -112,7 +102,7 @@
 #app-mount
   label[class*="radioGroupOption_"]:not([data-selected="true"])
   [class*="innerDotRadio_"] {
-  fill: transparent !important;
+  fill: var(--pw-transparent) !important;
   opacity: 0 !important;
 }
 
@@ -145,7 +135,7 @@
 #app-mount
   label[class*="radioGroupOption_"][data-selected="true"]
   [class*="innerDotRadio_"] {
-  fill: #ffffff !important;
+  fill: var(--pw-control-radio-dot) !important;
   opacity: 1 !important;
 }
 

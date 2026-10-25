@@ -60,14 +60,14 @@
 
 /* Member hover */
 #app-mount [class*="membersWrap_"] [class*="member_"]:hover {
-  background-color: rgba(217, 174, 191, 0.12) !important;
+  background-color: var(--pw-member-hover) !important;
   box-shadow: none !important;
   outline: none !important;
 }
 
 /* Member keyboard focus */
 #app-mount [class*="membersWrap_"] [class*="member_"]:focus-within {
-  background-color: rgba(217, 174, 191, 0.16) !important;
+  background-color: var(--pw-member-focus) !important;
   box-shadow: none !important;
 }
 
@@ -85,7 +85,7 @@
   [class*="listItem_"]:is(:hover, :focus-within)
   [class*="childWrapper_"] {
   background-color: var(--my-selected) !important;
-  box-shadow: 0 0 12px rgba(255, 130, 218, 0.2);
+  box-shadow: 0 0 12px var(--pw-navigation-glow);
 }
 
 /* Preserve the original icon colors and decorations */
@@ -109,5 +109,5 @@
   [class*="childWrapper_"] {
   background-color: var(--my-accent) !important;
   color: var(--my-server-sidebar) !important;
-  box-shadow: 0 0 12px rgba(255, 130, 218, 0.25);
+  box-shadow: 0 0 12px var(--pw-home-hover-glow);
 }

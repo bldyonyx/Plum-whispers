@@ -5,13 +5,13 @@
 body,
 .theme-dark {
   /* Pink interactive backgrounds */
-  --background-modifier-hover: #493841;
-  --background-modifier-active: #55404c;
-  --background-modifier-selected: #493841;
+  --background-modifier-hover: var(--pw-interactive-hover);
+  --background-modifier-active: var(--pw-interactive-active);
+  --background-modifier-selected: var(--pw-interactive-hover);
 
-  --bg-overlay-hover: rgba(217, 174, 191, 0.1);
-  --bg-overlay-active: rgba(217, 174, 191, 0.16);
-  --bg-overlay-selected: rgba(217, 174, 191, 0.14);
+  --bg-overlay-hover: var(--pw-overlay-hover);
+  --bg-overlay-active: var(--pw-overlay-active);
+  --bg-overlay-selected: var(--pw-overlay-selected);
 
   /* Links */
   --text-link: var(--my-accent);
@@ -26,7 +26,7 @@ body,
 #app-mount
   [class*="privateChannels"]
   [class*="privateChannelsHeaderContainer"] {
-  background: transparent !important;
+  background: var(--pw-transparent) !important;
   box-shadow: none !important;
 }
 
@@ -69,15 +69,6 @@ body,
 :root {
   --pw-rose-whisper-duration: 220ms;
   --pw-rose-whisper-easing: ease-out;
-
-  --pw-rose-whisper-border: rgba(217, 174, 191, 0.38);
-  --pw-rose-whisper-glow: rgba(217, 174, 191, 0.12);
-
-  --pw-rose-active-border: rgba(232, 174, 201, 0.72);
-  --pw-rose-active-glow: rgba(217, 174, 191, 0.2);
-
-  /* Rose prune for direct messages */
-  --pw-dm-background: #58424f;
 }
 
 /* ========================================
@@ -217,8 +208,8 @@ body,
 #app-mount
   [class*="scroller_c1e9c4"]
   [class*="item_c1e9c4"]:not([class*="colorDanger_"]):hover {
-  background-color: #69475e !important;
-  color: #f5c9dd !important;
+  background-color: var(--pw-menu-item-background) !important;
+  color: var(--pw-menu-item-text) !important;
 }
 
 /* ========================================
@@ -229,7 +220,7 @@ body,
   [class*="scroller_c1e9c4"]
   [class*="item_c1e9c4"]:not([class*="colorDanger_"]):hover
   svg {
-  color: #e8aec9 !important;
+  color: var(--pw-menu-item-icon) !important;
 }
 
 /* ========================================
@@ -241,7 +232,7 @@ body,
  */
 
 #app-mount [class*="scroller_c1e9c4"] [class*="button_f563df"]:hover {
-  background-color: #69475e !important;
+  background-color: var(--pw-menu-item-background) !important;
 }
 
 /* ========================================
@@ -251,8 +242,8 @@ body,
 #app-mount
   [class*="scroller_c1e9c4"]
   [class*="item_c1e9c4"]:not([class*="colorDanger_"]):focus-visible {
-  background-color: #69475e !important;
-  color: #f5c9dd !important;
+  background-color: var(--pw-menu-item-background) !important;
+  color: var(--pw-menu-item-text) !important;
 }
 
 /* ========================================
@@ -261,10 +252,10 @@ body,
 
 /* Match the context menu appearance */
 #app-mount [class*="buttonsInner_"][class*="popover_"] {
-  background: #382f38 !important;
-  border: 1px solid #514650 !important;
+  background: var(--pw-message-actions-background) !important;
+  border: 1px solid var(--pw-message-actions-border) !important;
   border-radius: 10px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 4px 12px var(--pw-message-actions-shadow) !important;
 }
 
 /* Action buttons */
@@ -281,7 +272,7 @@ body,
 #app-mount
   [class*="buttonsInner_"][class*="popover_"]
   :is(button, [role="button"], [class*="button_"]):hover {
-  background-color: #69475e !important;
+  background-color: var(--pw-menu-item-background) !important;
 }
 
 /* Soft pink icons on hover */
@@ -289,14 +280,14 @@ body,
   [class*="buttonsInner_"][class*="popover_"]
   :is(button, [role="button"], [class*="button_"]):hover
   svg {
-  color: #e8aec9 !important;
+  color: var(--pw-menu-item-icon) !important;
 }
 
 /* Keep keyboard focus visible */
 #app-mount
   [class*="buttonsInner_"][class*="popover_"]
   :is(button, [role="button"], [class*="button_"]):focus-visible {
-  outline: 2px solid #e8aec9 !important;
+  outline: 2px solid var(--pw-menu-item-icon) !important;
   outline-offset: -2px;
 }
 

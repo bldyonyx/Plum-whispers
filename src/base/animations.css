@@ -87,8 +87,8 @@
     pointer-events: none;
 
     box-shadow:
-      0 0 0 1px rgba(217, 174, 191, 0.45),
-      0 0 18px 3px rgba(217, 174, 191, 0.25);
+      0 0 0 1px var(--pw-bloom-border),
+      0 0 18px 3px var(--pw-bloom-glow);
 
     opacity: 0;
 

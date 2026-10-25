@@ -7,7 +7,7 @@
    ======================================== */
 
 #app-mount a[href^="http"] {
-  color: #e65a8b;
+  color: var(--pw-link);
   text-decoration: none;
   transition:
     color 0.2s ease,
@@ -16,20 +16,20 @@
 
 /* Hover — pink glow */
 #app-mount a[href^="http"]:hover {
-  color: #ffe1f0;
+  color: var(--pw-link-hover);
   text-decoration: none;
   text-shadow:
-    0 0 6px rgba(255, 160, 210, 0.8),
-    0 0 14px rgba(230, 120, 190, 0.5);
+    0 0 6px var(--pw-link-glow-inner),
+    0 0 14px var(--pw-link-glow-outer);
 }
 
 /* Keyboard focus */
 #app-mount a[href^="http"]:focus-visible {
-  color: #ffe1f0;
+  color: var(--pw-link-hover);
   text-decoration: none;
   text-shadow:
-    0 0 6px rgba(255, 160, 210, 0.8),
-    0 0 14px rgba(230, 120, 190, 0.5);
+    0 0 6px var(--pw-link-glow-inner),
+    0 0 14px var(--pw-link-glow-outer);
 }
 
 /* ========================================
@@ -47,8 +47,8 @@
     [class*="reactionMe_"],
     [aria-pressed="true"]
   ) {
-  background-color: #69475e !important;
-  border-color: #e8aec9 !important;
+  background-color: var(--pw-reaction-background) !important;
+  border-color: var(--pw-reaction-border) !important;
   border-radius: 8px !important;
 }
 
@@ -59,7 +59,7 @@
     [aria-pressed="true"]
   )
   [class*="reactionCount_"] {
-  color: #f5c9dd !important;
+  color: var(--pw-reaction-text) !important;
 }
 
 /* Selected reaction hover */
@@ -68,8 +68,8 @@
     [class*="reactionMe_"],
     [aria-pressed="true"]
   ):hover {
-  background-color: #85566f !important;
-  border-color: #f5c9dd !important;
+  background-color: var(--pw-reaction-background-hover) !important;
+  border-color: var(--pw-reaction-text) !important;
 }
 
 /* ========================================
@@ -83,31 +83,18 @@
  */
 
 #app-mount {
-  --message-highlight-background-default: rgba(155, 70, 105, 0.16);
-  --message-highlight-background-hover: rgba(155, 70, 105, 0.24);
+  --message-highlight-background-default: var(--pw-reply-background);
+  --message-highlight-background-hover: var(--pw-reply-background-hover);
 }
 
 /* Soft dusty-rose reply accent */
 #app-mount .replying__5126c::before {
-  background-color: #c986a4 !important;
+  background-color: var(--pw-reply-accent) !important;
 }
 
 /* ========================================
    4. MENTION HIGHLIGHT
    ======================================== */
-
-:root {
-  /*
-   * Mention:
-   * Softer plum background
-   * with a dusty-pink left accent.
-   */
-
-  --pw-mentioned-background: rgba(105, 71, 94, 0.25);
-  --pw-mentioned-background-hover: rgba(105, 71, 94, 0.35);
-
-  --pw-mentioned-accent: #e8aec9;
-}
 
 /* Mentioned message background */
 #app-mount [class*="message_"][class*="mentioned_"] {
