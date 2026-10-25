@@ -14,16 +14,8 @@
     text-shadow 0.2s ease;
 }
 
-/* Hover — pink glow */
-#app-mount a[href^="http"]:hover {
-  color: var(--pw-link-hover);
-  text-decoration: none;
-  text-shadow:
-    0 0 6px var(--pw-link-glow-inner),
-    0 0 14px var(--pw-link-glow-outer);
-}
-
-/* Keyboard focus */
+/* Hover and keyboard focus — pink glow */
+#app-mount a[href^="http"]:hover,
 #app-mount a[href^="http"]:focus-visible {
   color: var(--pw-link-hover);
   text-decoration: none;

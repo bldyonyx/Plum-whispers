@@ -7,10 +7,7 @@
  * and item__58105. Keep Discord's geometry, masks and animations intact.
  * Use the guilds class rather than an English aria-label (localized in Discord).
  */
-#app-mount nav.guilds__5e434,
-#app-mount nav.guilds__5e434 .scroller_ef3116 {
-  background-color: var(--my-server-sidebar) !important;
-}
+/* Sidebar and scroller backgrounds are defined in backgrounds.css. */
 
 /* The same native pill handles unread, hover and selected states. */
 #app-mount nav.guilds__5e434 .item__58105 {
