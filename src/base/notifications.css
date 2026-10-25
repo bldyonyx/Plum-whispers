@@ -3,24 +3,40 @@
    ======================================== */
 
 :root {
+  /* ========================================
+     CHERRY GLOW
+     ======================================== */
+
   --pw-notification-background: #e65a8a;
   --pw-notification-text: #ffffff;
 
-  --pw-notification-glow: 0 0 6px #e65a8a8c, 0 0 14px rgba(230, 90, 138, 0.28);
+  --pw-notification-glow:
+    0 0 6px rgba(230, 90, 138, 0.55), 0 0 14px rgba(230, 90, 138, 0.28);
+
+  /* ========================================
+     LAVENDER MENTION
+     ======================================== */
+
+  --pw-mention-text: #e5d4ff;
+  --pw-mention-background: #59436f;
+  --pw-mention-border: #bca0e8;
+
+  --pw-mention-hover: #6b5283;
+
+  --pw-mention-glow:
+    inset 0 0 0 1px var(--pw-mention-border), 0 0 8px rgba(188, 160, 232, 0.22);
 }
 
 /* ========================================
-   1. SERVER NOTIFICATION BADGES
+   1. CHERRY GLOW — SERVER BADGES
    ======================================== */
 
 /*
- * Cherry Glow:
- * - Vibrant cherry-pink background
- * - Soft permanent glow
- * - No movement or continuous animation
+ * Bright cherry-pink notification badges
+ * with a soft permanent glow.
  *
- * Preserve Discord's badge dimensions,
- * shape and positioning.
+ * Preserve Discord's original badge
+ * dimensions and positioning.
  */
 
 #app-mount [class*="guilds_"] [class*="numberBadge_"] {
@@ -28,4 +44,79 @@
   color: var(--pw-notification-text) !important;
 
   box-shadow: var(--pw-notification-glow) !important;
+}
+
+/* ========================================
+   2. LAVENDER MENTION — CHAT MESSAGES
+   ======================================== */
+
+/*
+ * Mentions displayed inside messages.
+ * Preserve Discord's typography,
+ * padding and positioning.
+ */
+
+#app-mount [class*="messageContent_"] span.mention {
+  color: var(--pw-mention-text) !important;
+  background-color: var(--pw-mention-background) !important;
+
+  box-shadow: inset 0 0 0 1px var(--pw-mention-border);
+
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* ========================================
+   3. LAVENDER MENTION — MESSAGE HOVER
+   ======================================== */
+
+#app-mount [class*="messageContent_"] span.mention:hover {
+  color: var(--pw-mention-text) !important;
+  background-color: var(--pw-mention-hover) !important;
+
+  box-shadow: var(--pw-mention-glow);
+}
+
+/* ========================================
+   4. LAVENDER MENTION — MESSAGE COMPOSER
+   ======================================== */
+
+/*
+ * Mentions inside Discord's Slate editor.
+ * Scoped to the chatbar to avoid styling
+ * unrelated elements using wrapper_f61d60.
+ */
+
+#app-mount [class*="slateTextArea_"] span[class*="wrapper_f61d60"] {
+  color: var(--pw-mention-text) !important;
+  background-color: var(--pw-mention-background) !important;
+
+  box-shadow: inset 0 0 0 1px var(--pw-mention-border);
+
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* ========================================
+   5. LAVENDER MENTION — COMPOSER HOVER
+   ======================================== */
+
+#app-mount [class*="slateTextArea_"] span[class*="wrapper_f61d60"]:hover {
+  color: var(--pw-mention-text) !important;
+  background-color: var(--pw-mention-hover) !important;
+
+  box-shadow: var(--pw-mention-glow);
+}
+
+/* ========================================
+   6. REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  #app-mount [class*="messageContent_"] span.mention,
+  #app-mount [class*="slateTextArea_"] span[class*="wrapper_f61d60"] {
+    transition: none !important;
+  }
 }

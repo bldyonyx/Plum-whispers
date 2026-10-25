@@ -76,19 +76,56 @@
    3. REPLY HIGHLIGHT
    ======================================== */
 
-/* Background of highlighted reply messages */
+/*
+ * Reply:
+ * Raspberry-plum background
+ * with a soft dusty-rose left accent.
+ */
+
 #app-mount {
-  --message-highlight-background-default: rgba(105, 71, 94, 0.25);
-  --message-highlight-background-hover: rgba(105, 71, 94, 0.35);
+  --message-highlight-background-default: rgba(155, 70, 105, 0.16);
+  --message-highlight-background-hover: rgba(155, 70, 105, 0.24);
 }
 
-/* Dusty pink left accent */
+/* Soft dusty-rose reply accent */
 #app-mount .replying__5126c::before {
-  background-color: #e8aec9 !important;
+  background-color: #c986a4 !important;
 }
 
 /* ========================================
-   4. REDUCED MOTION
+   4. MENTION HIGHLIGHT
+   ======================================== */
+
+:root {
+  /*
+   * Mention:
+   * Softer plum background
+   * with a dusty-pink left accent.
+   */
+
+  --pw-mentioned-background: rgba(105, 71, 94, 0.25);
+  --pw-mentioned-background-hover: rgba(105, 71, 94, 0.35);
+
+  --pw-mentioned-accent: #e8aec9;
+}
+
+/* Mentioned message background */
+#app-mount [class*="message_"][class*="mentioned_"] {
+  background-color: var(--pw-mentioned-background) !important;
+}
+
+/* Mentioned message hover */
+#app-mount [class*="message_"][class*="mentioned_"]:hover {
+  background-color: var(--pw-mentioned-background-hover) !important;
+}
+
+/* Dusty-pink mention accent */
+#app-mount [class*="message_"][class*="mentioned_"]::before {
+  background-color: var(--pw-mentioned-accent) !important;
+}
+
+/* ========================================
+   5. REDUCED MOTION
    ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
