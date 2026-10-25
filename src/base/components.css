@@ -22,7 +22,6 @@ body,
    DIRECT MESSAGES HEADER
    ======================================== */
 
-/* Transparent header background */
 #app-mount
   [class*="privateChannels"]
   [class*="privateChannelsHeaderContainer"] {
@@ -30,12 +29,10 @@ body,
   box-shadow: none !important;
 }
 
-/* Direct Messages title */
 #app-mount span.headerText__99e7c {
   color: var(--my-accent) !important;
 }
 
-/* Add conversation icon */
 #app-mount svg.privateChannelRecipientsInviteButtonIcon__99e7c {
   color: var(--my-accent) !important;
   transition: color 160ms ease;
@@ -48,12 +45,6 @@ body,
 /* ========================================
    PRIVATE CONVERSATION HEADER ACTIONS
    ======================================== */
-
-/*
- * Preserve resting colors.
- * Brighten action icons on hover and
- * keyboard focus.
- */
 
 #app-mount
   [class*="chat_"]
@@ -73,7 +64,6 @@ body,
   --interactive-hover: var(--my-text);
 }
 
-/* Header SVG icons */
 #app-mount
   [class*="chat_"]
   [class*="toolbar_"]
@@ -89,7 +79,6 @@ body,
   color: var(--my-text) !important;
 }
 
-/* Icons using currentColor */
 #app-mount
   [class*="chat_"]
   [class*="toolbar_"]
@@ -110,7 +99,6 @@ body,
    SIDEBAR NAVIGATION HOVERS
    ======================================== */
 
-/* Friends / Nitro Home / Shop / Quests */
 #app-mount
   [class*="privateChannels"]
   [class*="channel"]:hover
@@ -118,7 +106,7 @@ body,
   background-color: var(--my-selected) !important;
 }
 
-/* Navigation icons — hover and focus */
+/* Friends / Nitro Home / Shop / Quests icons */
 #app-mount
   [class*="privateChannels"]
   [class*="channel"]:has([class*="linkButton_"])
@@ -142,6 +130,77 @@ body,
  */
 
 /* ========================================
+   VOICE PANEL ACTION BUTTONS
+   ======================================== */
+
+/*
+ * Camera, screen sharing, activities
+ * and video effects.
+ *
+ * OFF: native dark-plum appearance.
+ * HOVER: subtle plum, no pink.
+ * ON: dusty pink.
+ *
+ * Do not animate or recolor Lottie icons.
+ */
+
+#app-mount [class*="actionButtons_e131a9"] button[class*="button_e131a9"] {
+  transition: background-color 120ms ease-out !important;
+}
+
+/* Inactive button hover — plum */
+#app-mount
+  [class*="actionButtons_e131a9"]
+  button[class*="button_e131a9"]:not(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"],
+    [aria-pressed="true"]
+  ):is(:hover, :focus-visible) {
+  background-color: var(--my-selected) !important;
+}
+
+/*
+ * Active buttons:
+ * Use the accessibility pressed state
+ * and Discord's selected-state classes.
+ */
+
+#app-mount
+  [class*="actionButtons_e131a9"]
+  button[class*="button_e131a9"]:is(
+    [aria-pressed="true"],
+    [aria-expanded="true"],
+    [class*="selected_"],
+    [class*="active_"]
+  ):not(:disabled, [disabled], [aria-disabled="true"]) {
+  background-color: var(--my-accent) !important;
+  color: var(--my-background) !important;
+}
+
+/* Active button hover — remain pink */
+#app-mount
+  [class*="actionButtons_e131a9"]
+  button[class*="button_e131a9"]:is(
+    [aria-pressed="true"],
+    [aria-expanded="true"],
+    [class*="selected_"],
+    [class*="active_"]
+  ):not(:disabled, [disabled], [aria-disabled="true"]):is(
+    :hover,
+    :focus-visible
+  ) {
+  background-color: var(--my-accent) !important;
+  color: var(--my-background) !important;
+}
+
+/*
+ * Do not change Lottie animation properties.
+ * The background transition is intentionally
+ * short and limited to background-color.
+ */
+
+/* ========================================
    ROSE WHISPER — CHANNELS & FRIENDS
    ======================================== */
 
@@ -155,20 +214,12 @@ body,
    ======================================== */
 
 @media (prefers-reduced-motion: no-preference) {
-  /* Server channels */
-  #app-mount
-    [class*="containerDefault_"]
-    [class*="link_"],
-
-  /* Direct messages */
+  #app-mount [class*="containerDefault_"] [class*="link_"],
   #app-mount
     [class*="privateChannels"]
     [class*="channel"]
     > [class*="interactive"],
-
-  /* Friends list */
-  #app-mount
-    [class*="peopleListItem_"] {
+  #app-mount [class*="peopleListItem_"] {
     transition:
       background-color var(--pw-rose-whisper-duration)
         var(--pw-rose-whisper-easing),
@@ -179,11 +230,6 @@ body,
 /* ========================================
    2. SERVER CHANNEL HOVER
    ======================================== */
-
-/*
- * Soft Rose Whisper outline for
- * unselected channels.
- */
 
 #app-mount
   [class*="containerDefault_"]:not([class*="modeSelected_"])
@@ -197,16 +243,6 @@ body,
    3. ACTIVE SERVER CHANNEL
    ======================================== */
 
-/*
- * Active channels should visually match
- * the Rose Whisper hover effect.
- *
- * Use a translucent background instead
- * of Discord's opaque gray selection.
- * Keep the active outline stronger
- * than the regular hover.
- */
-
 #app-mount
   [class*="containerDefault_"][class*="modeSelected_"]
   [class*="link_"] {
@@ -217,7 +253,6 @@ body,
     inset 0 0 14px var(--pw-rose-active-glow);
 }
 
-/* Keep active styling on hover */
 #app-mount
   [class*="containerDefault_"][class*="modeSelected_"]
   [class*="link_"]:hover {
@@ -231,11 +266,6 @@ body,
 /* ========================================
    4. DIRECT MESSAGE HOVER
    ======================================== */
-
-/*
- * Rose prune background and outline.
- * Never style Nitro nameplates.
- */
 
 #app-mount
   [class*="privateChannels"]
@@ -289,20 +319,12 @@ body,
    PLUM WHISPERS — CONTEXT MENUS
    ======================================== */
 
-/* ========================================
-   1. MENU ITEMS
-   ======================================== */
-
 #app-mount
   [class*="scroller_c1e9c4"]
   [class*="item_c1e9c4"]:not([class*="colorDanger_"]):hover {
   background-color: var(--pw-menu-item-background) !important;
   color: var(--pw-menu-item-text) !important;
 }
-
-/* ========================================
-   2. MENU ICONS
-   ======================================== */
 
 #app-mount
   [class*="scroller_c1e9c4"]
@@ -311,17 +333,9 @@ body,
   color: var(--pw-menu-item-icon) !important;
 }
 
-/* ========================================
-   3. QUICK REACTIONS
-   ======================================== */
-
 #app-mount [class*="scroller_c1e9c4"] [class*="button_f563df"]:hover {
   background-color: var(--pw-menu-item-background) !important;
 }
-
-/* ========================================
-   4. KEYBOARD FOCUS
-   ======================================== */
 
 #app-mount
   [class*="scroller_c1e9c4"]
@@ -334,7 +348,6 @@ body,
    PLUM WHISPERS — MESSAGE ACTIONS
    ======================================== */
 
-/* Message action toolbar */
 #app-mount [class*="buttonsInner_"][class*="popover_"] {
   background: var(--pw-message-actions-background) !important;
   border: 1px solid var(--pw-message-actions-border) !important;
@@ -342,25 +355,21 @@ body,
   box-shadow: 0 4px 12px var(--pw-message-actions-shadow) !important;
 }
 
-/* Action buttons */
 #app-mount
   [class*="buttonsInner_"][class*="popover_"]
   :is(button, [role="button"], [class*="button_"]) {
   border-radius: 7px !important;
-
   transition:
     background-color 0.15s ease,
     color 0.15s ease;
 }
 
-/* Plum hover */
 #app-mount
   [class*="buttonsInner_"][class*="popover_"]
   :is(button, [role="button"], [class*="button_"]):hover {
   background-color: var(--pw-menu-item-background) !important;
 }
 
-/* Pink icons on hover */
 #app-mount
   [class*="buttonsInner_"][class*="popover_"]
   :is(button, [role="button"], [class*="button_"]):hover
@@ -368,7 +377,6 @@ body,
   color: var(--pw-menu-item-icon) !important;
 }
 
-/* Keyboard focus */
 #app-mount
   [class*="buttonsInner_"][class*="popover_"]
   :is(button, [role="button"], [class*="button_"]):focus-visible {
@@ -381,6 +389,7 @@ body,
    ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
+  #app-mount [class*="actionButtons_e131a9"] button[class*="button_e131a9"],
   #app-mount [class*="buttonsInner_"][class*="popover_"] * {
     transition: none !important;
   }
