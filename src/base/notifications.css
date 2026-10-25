@@ -1,0 +1,32 @@
+/* ========================================
+   PLUM WHISPERS — NOTIFICATIONS
+   ======================================== */
+
+:root {
+  --pw-notification-background: #e65a8a;
+  --pw-notification-text: #ffffff;
+
+  --pw-notification-glow:
+    0 0 6px rgba(230, 90, 138, 0.55), 0 0 14px rgba(230, 90, 138, 0.28);
+}
+
+/* ========================================
+   1. SERVER NOTIFICATION BADGES
+   ======================================== */
+
+/*
+ * Cherry Glow:
+ * - Vibrant cherry-pink background
+ * - Soft permanent glow
+ * - No movement or continuous animation
+ *
+ * Preserve Discord's badge dimensions,
+ * shape and positioning.
+ */
+
+#app-mount [class*="guilds_"] [class*="numberBadge_"] {
+  background-color: var(--pw-notification-background) !important;
+  color: var(--pw-notification-text) !important;
+
+  box-shadow: var(--pw-notification-glow) !important;
+}

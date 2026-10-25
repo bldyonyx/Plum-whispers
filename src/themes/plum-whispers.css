@@ -17,6 +17,7 @@
 @import "../base/messages.css";
 @import "../base/chatbar.css";
 @import "../base/components.css";
+@import "../base/notifications.css";
 
 /* Optional effects */
 @import "../base/animations.css";
