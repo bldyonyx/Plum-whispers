@@ -1,7 +1,19 @@
 :root {
-  /* Our custom theme variables */
-  --my-background: #171321;
-  --my-surface: #231c2c;
-  --my-accent: #b8a0df;
-  --my-text: #f5f0fa;
+  /* Main backgrounds */
+  --my-background: #211d22;
+  --my-server-sidebar: #1b181c;
+  --my-surface: #2b252c;
+  --my-surface-raised: #393139;
+  --my-selected: #493841;
+
+  /* Text */
+  --my-text: #f5ecf4;
+  --my-text-muted: #b9aeb7;
+
+  /* Pink accents */
+  --my-accent: #d9aebf;
+  --my-accent-hover: #e6bfd0;
+
+  /* Borders */
+  --my-border: #342f35;
 }

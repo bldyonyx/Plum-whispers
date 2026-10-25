@@ -1,0 +1,53 @@
+/* ========================================
+   DARK KAWAII — COMPONENTS
+   ======================================== */
+
+body,
+.theme-dark {
+  --text-brand: var(--my-accent);
+  --text-link: var(--my-accent);
+  --background-modifier-hover: #393039;
+}
+
+/* ========================================
+   DIRECT MESSAGES HEADER
+   ======================================== */
+
+/* Transparent header background */
+#app-mount
+  [class*="privateChannels"]
+  [class*="privateChannelsHeaderContainer"] {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Direct Messages title */
+#app-mount span.headerText__99e7c {
+  color: var(--my-accent) !important;
+}
+
+/* Both icons sharing this Discord class */
+#app-mount svg.privateChannelRecipientsInviteButtonIcon__99e7c {
+  color: var(--my-accent) !important;
+  transition: color 160ms ease;
+}
+
+/* Hover */
+#app-mount svg.privateChannelRecipientsInviteButtonIcon__99e7c:hover {
+  color: var(--my-accent-hover) !important;
+}
+
+/* ========================================
+   MESSAGE COMPOSER
+   ======================================== */
+
+#app-mount [class*="channelTextArea"]:focus-within {
+  outline: 1px solid var(--my-accent);
+  outline-offset: -1px;
+}
+
+/* ========================================
+   USER CUSTOMIZATION
+   ======================================== */
+
+/* Preserve usernames, Nitro fonts and decorations. */

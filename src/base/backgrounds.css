@@ -1,20 +1,59 @@
-/* Main Discord background */
-#app-mount .bg__960e4 {
-  background: linear-gradient(
-    135deg,
-    #171321 0%,
-    #292037 55%,
-    #101019 100%
-  ) !important;
-}
+/* ========================================
+   DARK KAWAII — BACKGROUNDS
+   ======================================== */
 
-/* Discord background variables */
 body,
 .theme-dark {
-  --background-base-low: #231c2c;
-  --background-base-lower: #171321;
-  --background-base-lowest: #110e18;
-  --background-surface-high: #292334;
-  --background-surface-higher: #342a40;
-  --chat-background-default: #171321;
+  /* Discord background system */
+  --background-base-lowest: var(--my-server-sidebar);
+  --background-base-lower: var(--my-surface);
+  --background-base-low: var(--my-background);
+
+  --background-surface-high: var(--my-surface-raised);
+  --background-surface-higher: var(--my-surface-raised);
+
+  --chat-background-default: var(--my-background);
+
+  /* Text */
+  --text-normal: var(--my-text);
+  --text-muted: var(--my-text-muted);
+
+  /* Interactive */
+  --interactive-normal: var(--my-text-muted);
+  --interactive-hover: var(--my-text);
+  --interactive-active: var(--my-accent);
+}
+
+/* Overall Discord background */
+#app-mount .bg__960e4 {
+  background: var(--my-background) !important;
+}
+
+/* Server icons sidebar */
+#app-mount nav[aria-label="Servers"] {
+  background-color: var(--my-server-sidebar) !important;
+}
+
+/* Channel / DM sidebar */
+#app-mount [class*="sidebarList"],
+#app-mount [class*="privateChannels"] {
+  background-color: var(--my-surface) !important;
+}
+
+/* Main chat */
+#app-mount [class*="chatContent"],
+#app-mount [class*="messagesWrapper"] {
+  background-color: var(--my-background) !important;
+}
+
+/* Message composer */
+#app-mount [class*="channelTextArea"],
+#app-mount [class*="themedBackground"] {
+  background-color: var(--my-surface-raised) !important;
+}
+
+/* Profile sidebar */
+#app-mount [class*="userProfileOuter"],
+#app-mount [class*="profilePanel"] {
+  background-color: var(--my-surface) !important;
 }
