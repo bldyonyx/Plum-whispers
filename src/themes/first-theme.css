@@ -1,0 +1,20 @@
+/*!
+ * @name First Theme
+ * @description My first custom Discord theme.
+ * @author Maya
+ * @version 1.0.0
+ */
+
+/* Foundation */
+@import "../base/variables.css";
+@import "../base/backgrounds.css";
+@import "../base/transparency.css";
+
+/* Discord interface */
+@import "../base/panels.css";
+@import "../base/messages.css";
+@import "../base/chatbar.css";
+@import "../base/components.css";
+
+/* Optional effects */
+@import "../base/animations.css";
