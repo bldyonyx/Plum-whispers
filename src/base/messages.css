@@ -7,7 +7,7 @@
    ======================================== */
 
 #app-mount a[href^="http"] {
-  color: #ff82da;
+  color: #e65a8b;
   text-decoration: none;
   transition:
     color 0.2s ease,

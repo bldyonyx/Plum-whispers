@@ -6,8 +6,7 @@
   --pw-notification-background: #e65a8a;
   --pw-notification-text: #ffffff;
 
-  --pw-notification-glow:
-    0 0 6px rgba(230, 90, 138, 0.55), 0 0 14px rgba(230, 90, 138, 0.28);
+  --pw-notification-glow: 0 0 6px #e65a8a8c, 0 0 14px rgba(230, 90, 138, 0.28);
 }
 
 /* ========================================
