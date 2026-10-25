@@ -73,7 +73,22 @@
 }
 
 /* ========================================
-   3. REDUCED MOTION
+   3. REPLY HIGHLIGHT
+   ======================================== */
+
+/* Background of highlighted reply messages */
+#app-mount {
+  --message-highlight-background-default: rgba(105, 71, 94, 0.25);
+  --message-highlight-background-hover: rgba(105, 71, 94, 0.35);
+}
+
+/* Dusty pink left accent */
+#app-mount .replying__5126c::before {
+  background-color: #e8aec9 !important;
+}
+
+/* ========================================
+   4. REDUCED MOTION
    ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
