@@ -46,6 +46,69 @@ body,
 }
 
 /* ========================================
+   PRIVATE CONVERSATION HEADER ACTIONS
+   ======================================== */
+
+/*
+ * Keep the original resting colors.
+ * Brighten action icons on hover and
+ * keyboard focus.
+ *
+ * Preserve disabled and active states.
+ */
+
+#app-mount
+  [class*="chat_"]
+  [class*="toolbar_"]
+  [class*="iconWrapper_"]:is(:hover, :focus-visible):not(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"],
+    [aria-pressed="true"],
+    [aria-expanded="true"],
+    [aria-selected="true"],
+    [class*="disabled_"],
+    [class*="selected_"],
+    [class*="active_"]
+  ) {
+  color: var(--my-text) !important;
+  --interactive-hover: var(--my-text);
+}
+
+/* SVG icons inside header buttons */
+#app-mount
+  [class*="chat_"]
+  [class*="toolbar_"]
+  [class*="iconWrapper_"]:is(:hover, :focus-visible):not(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"],
+    [class*="disabled_"],
+    [class*="selected_"],
+    [class*="active_"]
+  )
+  svg {
+  color: var(--my-text) !important;
+}
+
+/* Icons that inherit their color via currentColor */
+#app-mount
+  [class*="chat_"]
+  [class*="toolbar_"]
+  [class*="iconWrapper_"]:is(:hover, :focus-visible):not(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"],
+    [class*="disabled_"],
+    [class*="selected_"],
+    [class*="active_"]
+  )
+  svg
+  [fill="currentColor"] {
+  fill: currentColor !important;
+}
+
+/* ========================================
    SIDEBAR NAVIGATION HOVERS
    ======================================== */
 
@@ -55,6 +118,38 @@ body,
   [class*="channel"]:hover
   > [class*="interactive"] {
   background-color: var(--my-selected) !important;
+}
+
+/*
+ * Brighten only the navigation icons.
+ *
+ * Navigation entries use linkButton_.
+ * Private conversations use a different
+ * channel content structure.
+ *
+ * Preserve the resting icon color.
+ */
+
+#app-mount
+  [class*="privateChannels"]
+  [class*="channel"]:has([class*="linkButton_"])
+  > [class*="interactive"]:is(:hover, :focus-visible)
+  [class*="linkButtonIcon_"] {
+  color: var(--my-text) !important;
+}
+
+/*
+ * Some Discord navigation icons inherit
+ * their color from the SVG element.
+ */
+
+#app-mount
+  [class*="privateChannels"]
+  [class*="channel"]:has([class*="linkButton_"])
+  > [class*="interactive"]:is(:hover, :focus-visible)
+  [class*="linkButtonIcon_"]
+  svg {
+  color: var(--my-text) !important;
 }
 
 /*
