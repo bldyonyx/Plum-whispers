@@ -1,4 +1,11 @@
-/* Message links */
+/* ========================================
+   PLUM WHISPERS — MESSAGES
+   ======================================== */
+
+/* ========================================
+   1. MESSAGE LINKS
+   ======================================== */
+
 #app-mount a[href^="http"] {
   color: #ff82da;
   text-decoration: none;
@@ -24,6 +31,50 @@
     0 0 6px rgba(255, 160, 210, 0.8),
     0 0 14px rgba(230, 120, 190, 0.5);
 }
+
+/* ========================================
+   2. MESSAGE REACTIONS
+   ======================================== */
+
+/*
+ * Selected reactions:
+ * dusty plum background, pink border,
+ * rounded Discord-style shape.
+ */
+
+#app-mount
+  :is([class^="reaction_"], [class*=" reaction_"]):is(
+    [class*="reactionMe_"],
+    [aria-pressed="true"]
+  ) {
+  background-color: #69475e !important;
+  border-color: #e8aec9 !important;
+  border-radius: 8px !important;
+}
+
+/* Selected reaction counter */
+#app-mount
+  :is([class^="reaction_"], [class*=" reaction_"]):is(
+    [class*="reactionMe_"],
+    [aria-pressed="true"]
+  )
+  [class*="reactionCount_"] {
+  color: #f5c9dd !important;
+}
+
+/* Selected reaction hover */
+#app-mount
+  :is([class^="reaction_"], [class*=" reaction_"]):is(
+    [class*="reactionMe_"],
+    [aria-pressed="true"]
+  ):hover {
+  background-color: #85566f !important;
+  border-color: #f5c9dd !important;
+}
+
+/* ========================================
+   3. REDUCED MOTION
+   ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
   #app-mount a[href^="http"] {
