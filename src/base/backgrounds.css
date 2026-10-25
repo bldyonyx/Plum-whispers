@@ -206,6 +206,76 @@ body,
 }
 
 /* ========================================
+   GO LIVE SOURCE PICKER — DOTS
+   ======================================== */
+
+/* Require all three source tabs within Go Live's segmented controls.
+ * Match stable suffixes only; Discord generates the ID prefixes.
+ * Paint only the modal background, preserving its color and child controls.
+ */
+#app-mount
+  [data-mana-component="modal"].container__8a031:has(
+    > .root_a55fdc
+      [role="tablist"].segmentedControl_a55fdc
+      [role="tab"][data-list-item-id$="____window"]
+  ):has(
+    > .root_a55fdc
+      [role="tablist"].segmentedControl_a55fdc
+      [role="tab"][data-list-item-id$="____screen"]
+  ):has(
+    > .root_a55fdc
+      [role="tablist"].segmentedControl_a55fdc
+      [role="tab"][data-list-item-id$="____camera"]
+  ) {
+  background-image:
+    linear-gradient(
+      color-mix(
+        in srgb,
+        var(--texture-dots-overlay)
+          calc(
+            100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
+              100%
+          ),
+        var(--pw-transparent)
+      ),
+      color-mix(
+        in srgb,
+        var(--texture-dots-overlay)
+          calc(
+            100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
+              100%
+          ),
+        var(--pw-transparent)
+      )
+    ),
+    url("../assets/textures/dots.jpg") !important;
+
+  background-size: auto, var(--texture-dots-size) !important;
+  background-repeat: repeat !important;
+}
+
+/* Let the modal's existing dots show through the Go Live footer. */
+#app-mount
+  [data-mana-component="modal"].container__8a031:has(
+    > .root_a55fdc
+      [role="tablist"].segmentedControl_a55fdc
+      [role="tab"][data-list-item-id$="____window"]
+  ):has(
+    > .root_a55fdc
+      [role="tablist"].segmentedControl_a55fdc
+      [role="tab"][data-list-item-id$="____screen"]
+  ):has(
+    > .root_a55fdc
+      [role="tablist"].segmentedControl_a55fdc
+      [role="tab"][data-list-item-id$="____camera"]
+  )
+  > .root_a55fdc
+  > .footer_a55fdc {
+  background-color: var(--pw-transparent) !important;
+  background-image: none !important;
+}
+
+/* ========================================
    SETTINGS SIDEBAR — HEARTS
    ======================================== */
 
