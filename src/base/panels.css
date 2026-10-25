@@ -53,3 +53,61 @@
   background-color: var(--my-selected) !important;
   color: var(--my-accent) !important;
 }
+
+/* ========================================
+   DARK KAWAII — MEMBER LIST HOVERS
+   ======================================== */
+
+/* Member hover */
+#app-mount [class*="membersWrap_"] [class*="member_"]:hover {
+  background-color: rgba(217, 174, 191, 0.12) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Member keyboard focus */
+#app-mount [class*="membersWrap_"] [class*="member_"]:focus-within {
+  background-color: rgba(217, 174, 191, 0.16) !important;
+  box-shadow: none !important;
+}
+
+/* ========================================
+   DARK KAWAII — HOME & FAVORITES HOVERS
+   ======================================== */
+
+/* Home and Favorites — hover and keyboard focus */
+#app-mount
+  nav[class*="guilds_"]
+  [class*="listItem_"]:is(:hover, :focus-within)
+  [class*="wrapper_"][class*="selected_"],
+#app-mount
+  nav[class*="guilds_"]
+  [class*="listItem_"]:is(:hover, :focus-within)
+  [class*="childWrapper_"] {
+  background-color: var(--my-selected) !important;
+  box-shadow: 0 0 12px rgba(255, 130, 218, 0.2);
+}
+
+/* Preserve the original icon colors and decorations */
+/* ========================================
+   DARK KAWAII — HOME ACTIVE STATE
+   ======================================== */
+
+/* Discord Home — selected */
+#app-mount
+  nav[class*="guilds_"]
+  [data-list-item-id="guildsnav___home"]
+  [class*="childWrapper_"] {
+  background-color: var(--my-selected) !important;
+  color: var(--my-accent) !important;
+}
+
+/* Discord Home — hover */
+#app-mount
+  nav[class*="guilds_"]
+  [data-list-item-id="guildsnav___home"]:hover
+  [class*="childWrapper_"] {
+  background-color: var(--my-accent) !important;
+  color: var(--my-server-sidebar) !important;
+  box-shadow: 0 0 12px rgba(255, 130, 218, 0.25);
+}

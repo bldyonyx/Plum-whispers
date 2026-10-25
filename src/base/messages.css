@@ -1,0 +1,32 @@
+/* Message links */
+#app-mount a[href^="http"] {
+  color: #ff82da;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+/* Hover — pink glow */
+#app-mount a[href^="http"]:hover {
+  color: #ffe1f0;
+  text-decoration: none;
+  text-shadow:
+    0 0 6px rgba(255, 160, 210, 0.8),
+    0 0 14px rgba(230, 120, 190, 0.5);
+}
+
+/* Keyboard focus */
+#app-mount a[href^="http"]:focus-visible {
+  color: #ffe1f0;
+  text-decoration: none;
+  text-shadow:
+    0 0 6px rgba(255, 160, 210, 0.8),
+    0 0 14px rgba(230, 120, 190, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #app-mount a[href^="http"] {
+    transition: none;
+  }
+}
