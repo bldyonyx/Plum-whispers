@@ -1,0 +1,55 @@
+/* ========================================
+   DARK KAWAII — SERVER SIDEBAR
+   ======================================== */
+
+/*
+ * Midnight's current CSS identifies guilds__5e434, scroller_ef3116
+ * and item__58105. Keep Discord's geometry, masks and animations intact.
+ * Use the guilds class rather than an English aria-label (localized in Discord).
+ */
+#app-mount nav.guilds__5e434,
+#app-mount nav.guilds__5e434 .scroller_ef3116 {
+  background-color: var(--my-server-sidebar) !important;
+}
+
+/* The same native pill handles unread, hover and selected states. */
+#app-mount nav.guilds__5e434 .item__58105 {
+  background-color: var(--my-accent) !important;
+}
+
+/*
+ * Native utility buttons only (Add a Server / Discover).
+ * Match CSS-module token prefixes to tolerate changes to their hash.
+ * These component names still need confirmation in the desktop client.
+ * Never target the server image wrapper or add an overlay to server icons.
+ */
+#app-mount
+  nav.guilds__5e434
+  :is([class^="circleIconButton_"], [class*=" circleIconButton_"]) {
+  background-color: var(--my-surface) !important;
+  color: var(--my-accent) !important;
+}
+
+#app-mount
+  nav.guilds__5e434
+  :is([class^="circleIconButton_"], [class*=" circleIconButton_"]):is(
+    :hover,
+    :focus-visible
+  ) {
+  background-color: var(--my-selected) !important;
+  color: var(--my-accent-hover) !important;
+}
+
+/* Persistent native selection and pointer press, without changing the shape. */
+#app-mount
+  nav.guilds__5e434
+  :is([class^="circleIconButton_"], [class*=" circleIconButton_"]):is(
+    :active,
+    [aria-pressed="true"],
+    [aria-selected="true"],
+    [class^="selected_"],
+    [class*=" selected_"]
+  ) {
+  background-color: var(--my-selected) !important;
+  color: var(--my-accent) !important;
+}

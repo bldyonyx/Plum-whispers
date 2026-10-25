@@ -39,6 +39,12 @@ export default defineConfig({
   ],
 
   build: {
+    // Vencord loads a standalone CSS file: always embed these textures,
+    // even if a replacement image exceeds Vite's usual size threshold.
+    assetsInlineLimit: (filePath) =>
+      /[/\\]src[/\\]assets[/\\]textures[/\\](dots|hearts|paws)\.jpg$/.test(filePath)
+        ? true
+        : undefined,
     outDir:
       isWatchMode && existsSync(vencordDirectory) ? vencordDirectory : "dist",
 

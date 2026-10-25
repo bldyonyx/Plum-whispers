@@ -14,6 +14,25 @@
   --my-accent: #d9aebf;
   --my-accent-hover: #e6bfd0;
 
+  /* Textures: enabled = 0 (off) or 1 (on); opacity = 0..1.
+   * Opacity controls image visibility through the dark overlay, never text.
+   * Off produces a solid overlay color. Size is the repeating image width.
+   */
+  --texture-paws-enabled: 1;
+  --texture-paws-size: 240px;
+  --texture-paws-opacity: 0.12;
+  --texture-paws-overlay: var(--my-surface);
+
+  --texture-dots-enabled: 1;
+  --texture-dots-size: 260px;
+  --texture-dots-opacity: 0.18;
+  --texture-dots-overlay: var(--my-background);
+
+  --texture-hearts-enabled: 1;
+  --texture-hearts-size: 260px;
+  --texture-hearts-opacity: 0.08;
+  --texture-hearts-overlay: var(--my-surface);
+
   /* Borders */
   --my-border: #342f35;
 }
