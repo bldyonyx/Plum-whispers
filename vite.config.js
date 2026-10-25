@@ -39,12 +39,24 @@ export default defineConfig({
   ],
 
   build: {
-    // Vencord loads a standalone CSS file: always embed these textures,
-    // even if a replacement image exceeds Vite's usual size threshold.
-    assetsInlineLimit: (filePath) =>
-      /[/\\]src[/\\]assets[/\\]textures[/\\](dots|hearts|paws)\.jpg$/.test(filePath)
-        ? true
-        : undefined,
+    /*
+     * Vencord loads standalone CSS files.
+     * Embed textures and local fonts as Base64 data URLs.
+     */
+    assetsInlineLimit: (filePath) => {
+      const isThemeTexture =
+        /[/\\]src[/\\]assets[/\\]textures[/\\](dots|hearts|paws)\.jpg$/.test(
+          filePath,
+        );
+
+      const isThemeFont =
+        /[/\\]src[/\\]assets[/\\]fonts[/\\][^/\\]+\.(ttf|otf|woff2?)$/i.test(
+          filePath,
+        );
+
+      return isThemeTexture || isThemeFont ? true : undefined;
+    },
+
     outDir:
       isWatchMode && existsSync(vencordDirectory) ? vencordDirectory : "dist",
 
@@ -54,6 +66,7 @@ export default defineConfig({
 
     rollupOptions: {
       input: themes,
+
       output: {
         assetFileNames: (assetInfo) => {
           if (assetInfo.names?.[0]?.endsWith(".css")) {
