@@ -1,0 +1,97 @@
+/* ========================================
+   PLUM WHISPERS — ANIMATIONS
+   ======================================== */
+
+/* ========================================
+   1. ANIMATION VARIABLES
+   ======================================== */
+
+:root {
+  --pw-bloom-duration: 180ms;
+  --pw-bloom-glow-duration: 550ms;
+  --pw-bloom-easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ========================================
+   2. PETAL BLOOM — OPENING
+   ======================================== */
+
+@keyframes pw-petal-open {
+  from {
+    opacity: 0;
+    scale: 0.96;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* ========================================
+   3. PETAL BLOOM — GLOW
+   ======================================== */
+
+@keyframes pw-petal-glow {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   4. CONTEXT MENU ANIMATIONS
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  #app-mount [role="menu"][class*="menu_"] {
+    position: relative;
+
+    animation: pw-petal-open var(--pw-bloom-duration) var(--pw-bloom-easing)
+      both;
+
+    transform-origin: center;
+  }
+
+  /*
+   * Decorative glow on a separate layer.
+   * The menu itself remains responsive.
+   */
+
+  #app-mount [role="menu"][class*="menu_"]::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    pointer-events: none;
+
+    box-shadow:
+      0 0 0 1px rgba(217, 174, 191, 0.45),
+      0 0 18px 3px rgba(217, 174, 191, 0.25);
+
+    opacity: 0;
+
+    animation: pw-petal-glow var(--pw-bloom-glow-duration) ease-out both;
+  }
+}
+
+/* ========================================
+   5. REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  #app-mount [role="menu"][class*="menu_"] {
+    animation: none !important;
+  }
+
+  #app-mount [role="menu"][class*="menu_"]::before {
+    content: none;
+  }
+}
