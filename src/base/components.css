@@ -80,3 +80,108 @@ body,
  * Nitro nameplates, profile colors,
  * banners and avatar decorations.
  */
+
+/* ========================================
+   PLUM WHISPERS — CONTEXT MENUS
+   ======================================== */
+
+/* ========================================
+   1. MENU ITEMS
+   ======================================== */
+
+/*
+ * Soft plum hover for regular menu items.
+ * Preserve Discord's layout and spacing.
+ */
+
+#app-mount
+  [class*="scroller_c1e9c4"]
+  [class*="item_c1e9c4"]:not([class*="colorDanger_"]):hover {
+  background-color: #69475e !important;
+  color: #f5c9dd !important;
+}
+
+/* ========================================
+   2. MENU ICONS
+   ======================================== */
+
+#app-mount
+  [class*="scroller_c1e9c4"]
+  [class*="item_c1e9c4"]:not([class*="colorDanger_"]):hover
+  svg {
+  color: #e8aec9 !important;
+}
+
+/* ========================================
+   3. QUICK REACTIONS
+   ======================================== */
+
+/*
+ * Pink-plum hover for the quick reaction buttons.
+ */
+
+#app-mount [class*="scroller_c1e9c4"] [class*="button_f563df"]:hover {
+  background-color: #69475e !important;
+}
+
+/* ========================================
+   4. KEYBOARD FOCUS
+   ======================================== */
+
+#app-mount
+  [class*="scroller_c1e9c4"]
+  [class*="item_c1e9c4"]:not([class*="colorDanger_"]):focus-visible {
+  background-color: #69475e !important;
+  color: #f5c9dd !important;
+}
+
+/* ========================================
+   PLUM WHISPERS — MESSAGE ACTIONS
+   ======================================== */
+
+/* Match the context menu appearance */
+#app-mount [class*="buttonsInner_"][class*="popover_"] {
+  background: #382f38 !important;
+  border: 1px solid #514650 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Action buttons */
+#app-mount
+  [class*="buttonsInner_"][class*="popover_"]
+  :is(button, [role="button"], [class*="button_"]) {
+  border-radius: 7px !important;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+/* Plum hover */
+#app-mount
+  [class*="buttonsInner_"][class*="popover_"]
+  :is(button, [role="button"], [class*="button_"]):hover {
+  background-color: #69475e !important;
+}
+
+/* Soft pink icons on hover */
+#app-mount
+  [class*="buttonsInner_"][class*="popover_"]
+  :is(button, [role="button"], [class*="button_"]):hover
+  svg {
+  color: #e8aec9 !important;
+}
+
+/* Keep keyboard focus visible */
+#app-mount
+  [class*="buttonsInner_"][class*="popover_"]
+  :is(button, [role="button"], [class*="button_"]):focus-visible {
+  outline: 2px solid #e8aec9 !important;
+  outline-offset: -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #app-mount [class*="buttonsInner_"][class*="popover_"] * {
+    transition: none !important;
+  }
+}
