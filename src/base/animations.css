@@ -10,6 +10,9 @@
   --pw-bloom-duration: 180ms;
   --pw-bloom-glow-duration: 550ms;
   --pw-bloom-easing: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --pw-float-duration: 220ms;
+  --pw-float-easing: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* ========================================
@@ -47,7 +50,23 @@
 }
 
 /* ========================================
-   4. CONTEXT MENU ANIMATIONS
+   4. PETAL FLOAT — POPOVERS
+   ======================================== */
+
+@keyframes pw-petal-float {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* ========================================
+   5. CONTEXT MENU ANIMATIONS
    ======================================== */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -59,11 +78,6 @@
 
     transform-origin: center;
   }
-
-  /*
-   * Decorative glow on a separate layer.
-   * The menu itself remains responsive.
-   */
 
   #app-mount [role="menu"][class*="menu_"]::before {
     content: "";
@@ -80,14 +94,26 @@
 
     animation: pw-petal-glow var(--pw-bloom-glow-duration) ease-out both;
   }
+
+  /* ========================================
+     6. POPOVER ANIMATIONS
+     ======================================== */
+
+  #app-mount
+    :is([class*="popout_"], [class*="emojiPicker_"]):not([role="menu"]) {
+    animation: pw-petal-float var(--pw-float-duration) var(--pw-float-easing)
+      both;
+  }
 }
 
 /* ========================================
-   5. REDUCED MOTION
+   7. REDUCED MOTION
    ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  #app-mount [role="menu"][class*="menu_"] {
+  #app-mount [role="menu"][class*="menu_"],
+  #app-mount
+    :is([class*="popout_"], [class*="emojiPicker_"]):not([role="menu"]) {
     animation: none !important;
   }
 
