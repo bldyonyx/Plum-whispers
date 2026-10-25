@@ -4,25 +4,13 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
-@font-face {
-  font-family: "Baby Doll";
-  src: url("../assets/fonts/BabyDoll.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
+/* ========================================
+   LOCAL FONTS
+   ======================================== */
 
 @font-face {
-  font-family: "PF Pixelscript";
-  src: url("../assets/fonts/PFPixelscript.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Glass Antiqua";
-  src: url("../assets/fonts/GlassAntiqua.ttf") format("truetype");
+  font-family: "DM Serif Text";
+  src: url("../assets/fonts/DMSerifText.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -36,10 +24,8 @@
   /* Main interface */
   --font-main: "Plus Jakarta Sans", sans-serif;
 
-  /* Decorative fonts */
-  --font-cute: "Baby Doll", sans-serif;
-  --font-pixel: "PF Pixelscript", monospace;
-  --font-fancy: "Glass Antiqua", serif;
+  /* Decorative typography */
+  --font-decorative: "DM Serif Text", Georgia, serif;
 
   /* Username sizes */
   --username-size: 17px;
@@ -118,7 +104,7 @@ body,
 
 /*
  * Customized Nitro usernames.
- * Preserve Discord's custom font family and weight.
+ * Preserve custom font families and weights.
  */
 #app-mount
   .header_c19a55

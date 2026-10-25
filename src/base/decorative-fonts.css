@@ -1,0 +1,70 @@
+/* ========================================
+   DARK KAWAII — DECORATIVE FONTS
+   ======================================== */
+
+/* ========================================
+   1. CHANNEL CATEGORY HEADERS
+   ======================================== */
+
+/*
+ * DM Serif Text for channel categories.
+ * Regular channel names remain unchanged.
+ */
+
+#app-mount
+  [class*="sidebar_"]
+  [class*="containerDefault_"]
+  [class*="mainContent_"]
+  [class*="overflow_"] {
+  font-family: var(--font-decorative) !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: #e8aec9 !important;
+  -webkit-text-stroke: 0;
+}
+
+/* ========================================
+   2. CATEGORY HOVER
+   ======================================== */
+
+#app-mount
+  [class*="sidebar_"]
+  [class*="containerDefault_"]
+  [class*="mainContent_"]:hover
+  [class*="overflow_"] {
+  color: #f5c9dd !important;
+}
+
+/* ========================================
+   3. DIRECT MESSAGES HEADER
+   ======================================== */
+
+#app-mount span[class*="headerText__99e7c"] {
+  font-family: var(--font-decorative) !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: #e8aec9 !important;
+  -webkit-text-stroke: 0;
+}
+
+/* ========================================
+   4. FIND OR START A CONVERSATION
+   ======================================== */
+
+/*
+ * Scope the font to the DM search button.
+ * Do not affect Friends, Nitro Home, Shop or Quests.
+ */
+
+#app-mount [class*="buttonChildrenWrapper_a22cb0"] [class*="overflow_b0dfc2"] {
+  font-family: var(--font-decorative) !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  -webkit-text-stroke: 0;
+}
