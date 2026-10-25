@@ -33,26 +33,10 @@ body,
    SERVER ICONS SIDEBAR — DOTS
    ======================================== */
 
-/*
- * Far-left sidebar containing:
- * Discord, Favorites, server icons,
- * Add Server and Discover.
- *
- * The dots texture belongs here.
- * Keep native server icons and indicators intact.
- */
-
-/* Outer server sidebar */
 #app-mount nav.guilds__5e434 {
   background-color: var(--my-server-sidebar) !important;
   background-image: none !important;
 }
-
-/*
- * Paint the actual server list and its scroller.
- * These selectors correspond to the elements
- * previously identified in Discord DevTools.
- */
 
 #app-mount nav.guilds__5e434 .tree_ef3116,
 #app-mount nav.guilds__5e434 .scroller_ef3116 {
@@ -89,16 +73,6 @@ body,
    CHANNELS & DIRECT MESSAGES — PAWS
    ======================================== */
 
-/*
- * Match complete CSS-module token prefixes,
- * without pinning their hashes.
- *
- * Keep the texture on the navigation panels.
- * Never clear backgrounds recursively:
- * nameplates and embeds may have custom images.
- */
-
-/* Channel/category panel and private-conversation navigation */
 #app-mount :is([class^="sidebarList_"], [class*=" sidebarList_"]),
 #app-mount :is([class^="privateChannels_"], [class*=" privateChannels_"]) {
   background-color: var(--my-surface) !important;
@@ -130,7 +104,6 @@ body,
   background-repeat: repeat !important;
 }
 
-/* Guild channel root and its scroller; DM navigation's direct scroller */
 #app-mount
   :is([class^="sidebarList_"], [class*=" sidebarList_"])
   > :is([class^="container_"], [class*=" container_"]),
@@ -145,12 +118,10 @@ body,
    CHAT — DOTS
    ======================================== */
 
-/* Main chat background */
 #app-mount :is([class^="chatContent_"], [class*=" chatContent_"]) {
   background-color: var(--my-background) !important;
 }
 
-/* Message viewport */
 #app-mount
   :is([class^="chatContent_"], [class*=" chatContent_"])
   :is([class^="messagesWrapper_"], [class*=" messagesWrapper_"]) {
@@ -183,7 +154,6 @@ body,
   background-repeat: repeat !important;
 }
 
-/* Allow the message texture to remain visible */
 #app-mount
   :is([class^="chatContent_"], [class*=" chatContent_"])
   :is([class^="messagesWrapper_"], [class*=" messagesWrapper_"])
@@ -194,15 +164,6 @@ body,
 /* ========================================
    MEMBERS & DM PROFILE SIDEBAR — HEARTS
    ======================================== */
-
-/*
- * Hearts on:
- * - Server member lists
- * - Outer DM profile sidebar
- *
- * Leave the actual profile card, avatar,
- * banner, decorations and nameplates untouched.
- */
 
 #app-mount aside.aside_f58343[aria-labelledby^="user-profile-sidebar-heading-"],
 #app-mount
@@ -237,10 +198,91 @@ body,
   background-repeat: repeat !important;
 }
 
-/* Preserve member nameplates and custom images */
 #app-mount
   :is([class^="membersWrap_"], [class*=" membersWrap_"])
   :is([class^="members_"], [class*=" members_"])
   :is([class^="member_"], [class*=" member_"]):not(:hover):not(:focus-within) {
   background-color: transparent !important;
+}
+
+/* ========================================
+   SETTINGS SIDEBAR — HEARTS
+   ======================================== */
+
+#app-mount [class*="modalContent_"] [class*="sidebar__409aa"] {
+  background-color: var(--my-surface) !important;
+
+  background-image:
+    linear-gradient(
+      color-mix(
+        in srgb,
+        var(--texture-hearts-overlay)
+          calc(
+            100% - var(--texture-hearts-enabled) *
+              var(--texture-hearts-opacity) * 100%
+          ),
+        transparent
+      ),
+      color-mix(
+        in srgb,
+        var(--texture-hearts-overlay)
+          calc(
+            100% - var(--texture-hearts-enabled) *
+              var(--texture-hearts-opacity) * 100%
+          ),
+        transparent
+      )
+    ),
+    url("../assets/textures/hearts.jpg") !important;
+
+  background-size: auto, var(--texture-hearts-size) !important;
+  background-repeat: repeat !important;
+}
+
+/* ========================================
+   SETTINGS CONTENT — DOTS
+   ======================================== */
+
+#app-mount [class*="contentBody_e9e3ed"] [class*="scroller__6131a"] {
+  background-color: var(--my-background) !important;
+
+  background-image:
+    linear-gradient(
+      color-mix(
+        in srgb,
+        var(--texture-dots-overlay)
+          calc(
+            100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
+              100%
+          ),
+        transparent
+      ),
+      color-mix(
+        in srgb,
+        var(--texture-dots-overlay)
+          calc(
+            100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
+              100%
+          ),
+        transparent
+      )
+    ),
+    url("../assets/textures/dots.jpg") !important;
+
+  background-size: auto, var(--texture-dots-size) !important;
+  background-repeat: repeat !important;
+}
+
+/* ========================================
+   SETTINGS HEADER — SOLID PLUM
+   ======================================== */
+
+/*
+ * Match the conversation header color.
+ * Keep the header plain, without textures.
+ */
+
+#app-mount [class*="contentHeader_e9e3ed"] {
+  background-color: var(--my-surface) !important;
+  background-image: none !important;
 }
