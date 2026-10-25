@@ -63,7 +63,7 @@ body,
  */
 
 /* ========================================
-   ROSE WHISPER — CHANNELS
+   ROSE WHISPER — CHANNELS & FRIENDS
    ======================================== */
 
 :root {
@@ -75,15 +75,30 @@ body,
 
   --pw-rose-active-border: rgba(232, 174, 201, 0.72);
   --pw-rose-active-glow: rgba(217, 174, 191, 0.2);
+
+  /* Rose prune for direct messages */
+  --pw-dm-background: #58424f;
 }
 
-/*
- * Apply the effect to channel links,
- * preserving their existing backgrounds.
- */
+/* ========================================
+   1. SMOOTH TRANSITIONS
+   ======================================== */
 
 @media (prefers-reduced-motion: no-preference) {
-  #app-mount [class*="containerDefault_"] [class*="link_"] {
+  /* Server channels */
+  #app-mount
+    [class*="containerDefault_"]
+    [class*="link_"],
+
+  /* Direct messages */
+  #app-mount
+    [class*="privateChannels"]
+    [class*="channel"]
+    > [class*="interactive"],
+
+  /* Friends list */
+  #app-mount
+    [class*="peopleListItem_"] {
     transition:
       background-color var(--pw-rose-whisper-duration)
         var(--pw-rose-whisper-easing),
@@ -92,12 +107,8 @@ body,
 }
 
 /* ========================================
-   1. CHANNEL HOVER
+   2. SERVER CHANNEL HOVER
    ======================================== */
-
-/*
- * Soft rose outline on unselected channels.
- */
 
 #app-mount
   [class*="containerDefault_"]:not([class*="modeSelected_"])
@@ -108,17 +119,8 @@ body,
 }
 
 /* ========================================
-   2. ACTIVE CHANNEL
+   3. ACTIVE SERVER CHANNEL
    ======================================== */
-
-/*
- * A brighter, persistent rose outline
- * for the currently selected channel.
- *
- * Discord normally applies modeSelected_
- * to the channel container rather than
- * to the link itself.
- */
 
 #app-mount
   [class*="containerDefault_"][class*="modeSelected_"]
@@ -126,6 +128,67 @@ body,
   box-shadow:
     inset 0 0 0 1px var(--pw-rose-active-border),
     inset 0 0 14px var(--pw-rose-active-glow);
+}
+
+/* ========================================
+   4. DIRECT MESSAGE HOVER
+   ======================================== */
+
+/*
+ * Rose prune background and Rose Whisper
+ * outline on unselected conversations.
+ *
+ * Target the interactive wrapper only.
+ * Never style .layout or Nitro nameplates.
+ */
+
+#app-mount
+  [class*="privateChannels"]
+  [class*="channel"]
+  > [class*="interactive"]:not([class*="selected_"]):hover {
+  background-color: var(--pw-dm-background) !important;
+
+  box-shadow:
+    inset 0 0 0 1px var(--pw-rose-whisper-border),
+    inset 0 0 12px var(--pw-rose-whisper-glow);
+}
+
+/* ========================================
+   5. ACTIVE DIRECT MESSAGE
+   ======================================== */
+
+/*
+ * Brighter outline and rose prune background
+ * for the selected conversation.
+ */
+
+#app-mount
+  [class*="privateChannels"]
+  [class*="channel"]
+  > [class*="interactive"][class*="selected_"] {
+  background-color: var(--pw-dm-background) !important;
+
+  box-shadow:
+    inset 0 0 0 1px var(--pw-rose-active-border),
+    inset 0 0 14px var(--pw-rose-active-glow);
+}
+
+/* ========================================
+   6. FRIENDS LIST HOVER
+   ======================================== */
+
+/*
+ * Friends tab:
+ * Soft rose outline around each friend row.
+ * Do not change avatars or profile effects.
+ */
+
+#app-mount [class*="peopleListItem_"]:hover {
+  box-shadow:
+    inset 0 0 0 1px var(--pw-rose-whisper-border),
+    inset 0 0 12px var(--pw-rose-whisper-glow);
+
+  border-radius: 8px;
 }
 
 /* ========================================
@@ -246,7 +309,12 @@ body,
     transition: none !important;
   }
 
-  #app-mount [class*="containerDefault_"] [class*="link_"] {
+  #app-mount
+    :is(
+      [class*="containerDefault_"] [class*="link_"],
+      [class*="privateChannels"] [class*="channel"] > [class*="interactive"],
+      [class*="peopleListItem_"]
+    ) {
     transition: none !important;
   }
 }
