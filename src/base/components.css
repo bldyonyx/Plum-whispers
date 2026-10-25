@@ -63,15 +63,6 @@ body,
  */
 
 /* ========================================
-   MESSAGE COMPOSER
-   ======================================== */
-
-#app-mount [class*="channelTextArea"]:focus-within {
-  outline: 1px solid var(--my-accent);
-  outline-offset: -1px;
-}
-
-/* ========================================
    USER CUSTOMIZATION PROTECTION
    ======================================== */
 

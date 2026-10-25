@@ -244,23 +244,3 @@ body,
   :is([class^="member_"], [class*=" member_"]):not(:hover):not(:focus-within) {
   background-color: transparent !important;
 }
-
-/* ========================================
-   MESSAGE COMPOSER
-   ======================================== */
-
-/* ========================================
-   MESSAGE COMPOSER
-   ======================================== */
-
-/*
- * Match the channel header background.
- * Keep Discord's native layout and controls.
- */
-
-#app-mount :is([class^="channelTextArea_"], [class*=" channelTextArea_"]),
-#app-mount
-  :is([class^="channelTextArea_"], [class*=" channelTextArea_"])
-  :is([class^="scrollableContainer_"], [class*=" scrollableContainer_"]) {
-  background-color: var(--my-surface) !important;
-}

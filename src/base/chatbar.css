@@ -1,0 +1,28 @@
+/* ========================================
+   PLUM WHISPERS — CHATBAR
+   ======================================== */
+
+/* ========================================
+   1. MESSAGE COMPOSER BACKGROUND
+   ======================================== */
+
+/*
+ * Match the channel header background.
+ * Keep Discord's native layout and controls.
+ */
+
+#app-mount :is([class^="channelTextArea_"], [class*=" channelTextArea_"]),
+#app-mount
+  :is([class^="channelTextArea_"], [class*=" channelTextArea_"])
+  :is([class^="scrollableContainer_"], [class*=" scrollableContainer_"]) {
+  background-color: var(--my-surface) !important;
+}
+
+/* ========================================
+   2. MESSAGE COMPOSER FOCUS
+   ======================================== */
+
+#app-mount [class*="channelTextArea"]:focus-within {
+  outline: 1px solid var(--my-accent);
+  outline-offset: -1px;
+}
