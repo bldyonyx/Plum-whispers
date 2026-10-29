@@ -210,8 +210,14 @@ body,
  * Paint overrides need !important against Discord's state-specific rules;
  * no global Discord color variables, SVG contents or animations are changed.
  */
-#app-mount .wrapper__1405b .buttonSection__1405b
-  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]):is(:hover, :focus-visible) {
+#app-mount
+  .wrapper__1405b
+  .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):not(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
+  ):is(:hover, :focus-visible) {
   background-color: var(--my-selected) !important;
 }
 
@@ -219,13 +225,48 @@ body,
  * Also paint a nub when its direct sibling is the selected main control.
  * The direct-child checks keep unrelated controls in the section independent.
  */
-#app-mount .wrapper__1405b .buttonSection__1405b
-  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]),
-#app-mount .wrapper__1405b .buttonSection__1405b
-  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]) > [class*="contextMenuNub_f1cea"]:not(:disabled, [disabled], [aria-disabled="true"]),
-#app-mount .wrapper__1405b .buttonSection__1405b
-  :has(> :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]))
-  > [class*="contextMenuNub_f1cea"]:not(:disabled, [disabled], [aria-disabled="true"]) {
+#app-mount
+  .wrapper__1405b
+  .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is(
+    [class*="active_f1cea"],
+    [class*="greenGlow_f1cea"],
+    [aria-pressed="true"],
+    [aria-expanded="true"],
+    [class*="selected_f1cea"]
+  ):not(:disabled, [disabled], [aria-disabled="true"]),
+#app-mount
+  .wrapper__1405b
+  .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is(
+    [class*="active_f1cea"],
+    [class*="greenGlow_f1cea"],
+    [aria-pressed="true"],
+    [aria-expanded="true"],
+    [class*="selected_f1cea"]
+  )
+  > [class*="contextMenuNub_f1cea"]:not(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
+  ),
+#app-mount
+  .wrapper__1405b
+  .buttonSection__1405b
+  :has(
+    > :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is(
+        [class*="active_f1cea"],
+        [class*="greenGlow_f1cea"],
+        [aria-pressed="true"],
+        [aria-expanded="true"],
+        [class*="selected_f1cea"]
+      )
+  )
+  > [class*="contextMenuNub_f1cea"]:not(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
+  ) {
   background-color: var(--my-accent) !important;
   color: var(--my-background) !important;
 }
@@ -236,13 +277,75 @@ body,
  * unpainted strokes/fills and structural definitions. For the verified Lottie
  * component, change only its color; leave its variable and animation tree alone.
  */
-#app-mount .wrapper__1405b .buttonSection__1405b
-  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]):not([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"], [class*="red_f1cea"] *, [class*="redGlow_f1cea"] *, [class*="disconnect_f1cea"] *, :disabled *, [aria-disabled="true"] *),
-#app-mount .wrapper__1405b .buttonSection__1405b
-  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]) > [class*="contextMenuNub_f1cea"]:not(:disabled, [disabled], [aria-disabled="true"]):not([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"], [class*="red_f1cea"] *, [class*="redGlow_f1cea"] *, [class*="disconnect_f1cea"] *, :disabled *, [aria-disabled="true"] *),
-#app-mount .wrapper__1405b .buttonSection__1405b
-  :has(> :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]))
-  > [class*="contextMenuNub_f1cea"]:not(:disabled, [disabled], [aria-disabled="true"]):not([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"], [class*="red_f1cea"] *, [class*="redGlow_f1cea"] *, [class*="disconnect_f1cea"] *, :disabled *, [aria-disabled="true"] *) {
+#app-mount
+  .wrapper__1405b
+  .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is(
+    [class*="active_f1cea"],
+    [class*="greenGlow_f1cea"],
+    [aria-pressed="true"],
+    [aria-expanded="true"],
+    [class*="selected_f1cea"]
+  ):not(:disabled, [disabled], [aria-disabled="true"]):not(
+    [class*="red_f1cea"],
+    [class*="redGlow_f1cea"],
+    [class*="disconnect_f1cea"],
+    [class*="red_f1cea"] *,
+    [class*="redGlow_f1cea"] *,
+    [class*="disconnect_f1cea"] *,
+    :disabled *,
+    [aria-disabled="true"] *
+  ),
+#app-mount
+  .wrapper__1405b
+  .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is(
+    [class*="active_f1cea"],
+    [class*="greenGlow_f1cea"],
+    [aria-pressed="true"],
+    [aria-expanded="true"],
+    [class*="selected_f1cea"]
+  )
+  > [class*="contextMenuNub_f1cea"]:not(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
+  ):not(
+    [class*="red_f1cea"],
+    [class*="redGlow_f1cea"],
+    [class*="disconnect_f1cea"],
+    [class*="red_f1cea"] *,
+    [class*="redGlow_f1cea"] *,
+    [class*="disconnect_f1cea"] *,
+    :disabled *,
+    [aria-disabled="true"] *
+  ),
+#app-mount
+  .wrapper__1405b
+  .buttonSection__1405b
+  :has(
+    > :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is(
+        [class*="active_f1cea"],
+        [class*="greenGlow_f1cea"],
+        [aria-pressed="true"],
+        [aria-expanded="true"],
+        [class*="selected_f1cea"]
+      )
+  )
+  > [class*="contextMenuNub_f1cea"]:not(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
+  ):not(
+    [class*="red_f1cea"],
+    [class*="redGlow_f1cea"],
+    [class*="disconnect_f1cea"],
+    [class*="red_f1cea"] *,
+    [class*="redGlow_f1cea"] *,
+    [class*="disconnect_f1cea"] *,
+    :disabled *,
+    [aria-disabled="true"] *
+  ) {
   /* DevTools: --__lottieIconColor: currentColor. Require the active state,
    * rather than inferring activation from a glow or an open options menu.
    */
@@ -251,15 +354,16 @@ body,
     color: var(--my-background) !important;
   }
 
-  & svg:not(
-    [class*="lottie" i],
-    [class*="lottie" i] *,
-    [data-animation-type] *,
-    defs *,
-    mask *,
-    clipPath *,
-    symbol *
-  ) {
+  &
+    svg:not(
+      [class*="lottie" i],
+      [class*="lottie" i] *,
+      [data-animation-type] *,
+      defs *,
+      mask *,
+      clipPath *,
+      symbol *
+    ) {
     color: var(--my-background) !important;
 
     & [fill="currentColor"]:not(defs *, mask *, clipPath *, symbol *) {
@@ -278,19 +382,36 @@ body,
  * The button and nub each sit inside a div under the attached-caret container.
  * Resolve the microphone state within that container only.
  */
-#app-mount .wrapper__1405b .buttonSection__1405b
+#app-mount
+  .wrapper__1405b
+  .buttonSection__1405b
   button[aria-label="Unmute"].centerButton_f1ceac.colorable_f1ceac.redGlow_f1ceac:not(
-    :disabled, [disabled], [aria-disabled="true"]
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
   ),
-#app-mount .wrapper__1405b .buttonSection__1405b
-  .attachedCaretButtonContainer_f1ceac:has(> div > button[aria-label="Unmute"].centerButton_f1ceac.colorable_f1ceac.redGlow_f1ceac:not(
-    :disabled, [disabled], [aria-disabled="true"]
-  ))
-  > div > .contextMenuNub_f1ceac.colorable_f1ceac.attachedCaret_f1ceac[aria-label="More Microphone Options"]:not(:disabled, [disabled], [aria-disabled="true"]) {
+#app-mount
+  .wrapper__1405b
+  .buttonSection__1405b
+  .attachedCaretButtonContainer_f1ceac:has(
+    > div
+      > button[aria-label="Unmute"].centerButton_f1ceac.colorable_f1ceac.redGlow_f1ceac:not(
+        :disabled,
+        [disabled],
+        [aria-disabled="true"]
+      )
+  )
+  > div
+  > .contextMenuNub_f1ceac.colorable_f1ceac.attachedCaret_f1ceac[aria-label="More Microphone Options"]:not(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
+  ) {
   background-color: var(--my-accent) !important;
   color: var(--my-background) !important;
 
-  & div.lottieIcon__5eb9b.lottieIconColors__5eb9b.centerIcon_f1ceac.controlIcon_f1ceac {
+  &
+    div.lottieIcon__5eb9b.lottieIconColors__5eb9b.centerIcon_f1ceac.controlIcon_f1ceac {
     color: var(--my-background) !important;
   }
 
@@ -305,39 +426,66 @@ body,
  * Keep background overrides for Discord's state colors. The Lottie component
  * consumes currentColor; preserve its variable and animation tree.
  */
-#app-mount .wrapper__1405b
+#app-mount
+  .wrapper__1405b
   button[aria-label="Disconnect"].colorable_f1ceac.disconnect_f1ceac:not(
-    :disabled, [disabled], [aria-disabled="true"]
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
   ) {
   background-color: var(--pw-call-disconnect) !important;
   color: var(--my-text) !important;
 
-  & div.lottieIcon__5eb9b.lottieIconColors__5eb9b.centerIcon_f1ceac.fullRegionIcon_f1ceac.controlIcon_f1ceac {
+  &
+    div.lottieIcon__5eb9b.lottieIconColors__5eb9b.centerIcon_f1ceac.fullRegionIcon_f1ceac.controlIcon_f1ceac {
     color: var(--my-text) !important;
   }
 }
 
-#app-mount .wrapper__1405b
+#app-mount
+  .wrapper__1405b
   button[aria-label="Disconnect"].colorable_f1ceac.disconnect_f1ceac:not(
-    :disabled, [disabled], [aria-disabled="true"]
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
   ):hover {
-  background-color: color-mix(in srgb, var(--pw-call-disconnect) 90%, var(--my-background)) !important;
+  background-color: color-mix(
+    in srgb,
+    var(--pw-call-disconnect) 90%,
+    var(--my-background)
+  ) !important;
 }
 
-#app-mount .wrapper__1405b
+#app-mount
+  .wrapper__1405b
   button[aria-label="Disconnect"].colorable_f1ceac.disconnect_f1ceac:not(
-    :disabled, [disabled], [aria-disabled="true"]
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
   ):active {
-  background-color: color-mix(in srgb, var(--pw-call-disconnect) 80%, var(--my-background)) !important;
+  background-color: color-mix(
+    in srgb,
+    var(--pw-call-disconnect) 80%,
+    var(--my-background)
+  ) !important;
 }
 
 /* Inset focus indicator leaves geometry and native animations intact. */
-#app-mount .wrapper__1405b
+#app-mount
+  .wrapper__1405b
   button[aria-label="Disconnect"].colorable_f1ceac.disconnect_f1ceac:not(
-    :disabled, [disabled], [aria-disabled="true"]
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
   ):focus-visible,
-#app-mount .wrapper__1405b .buttonSection__1405b
-  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]):focus-visible {
+#app-mount
+  .wrapper__1405b
+  .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):not(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"]
+  ):focus-visible {
   outline: 2px solid var(--my-text) !important;
   outline-offset: -3px;
 }
@@ -544,4 +692,28 @@ body,
     ) {
     transition: none !important;
   }
+}
+
+/* ========================================
+   SERVER MENU — DANGER ACTIONS
+   ======================================== */
+
+#app-mount [id="guild-header-popout-server-lockdown"],
+#app-mount [id="guild-header-popout-report-raid"],
+#app-mount [id="guild-header-popout-leave"] {
+  color: var(--pw-call-disconnect) !important;
+}
+
+/* Text labels */
+#app-mount [id="guild-header-popout-server-lockdown"] span,
+#app-mount [id="guild-header-popout-report-raid"] span,
+#app-mount [id="guild-header-popout-leave"] span {
+  color: var(--pw-call-disconnect) !important;
+}
+
+/* Icons */
+#app-mount [id="guild-header-popout-server-lockdown"] svg,
+#app-mount [id="guild-header-popout-report-raid"] svg,
+#app-mount [id="guild-header-popout-leave"] svg {
+  color: var(--pw-call-disconnect) !important;
 }
