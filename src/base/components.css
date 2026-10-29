@@ -274,6 +274,18 @@ body,
   }
 }
 
+/* Muted microphone: the verified action label distinguishes this redGlow
+ * control from Disconnect. Only recolor the Lottie component's currentColor;
+ * the generic active-icon block above intentionally excludes redGlow.
+ */
+#app-mount .wrapper__1405b .buttonSection__1405b
+  button[aria-label="Unmute"].centerButton_f1ceac.colorable_f1ceac.redGlow_f1ceac.attachedButton_f1ceac.colorBrand__201d5:not(
+    :disabled, [disabled], [aria-disabled="true"]
+  )
+  div.lottieIcon__5eb9b.lottieIconColors__5eb9b.centerIcon_f1ceac.controlIcon_f1ceac {
+  color: var(--my-background) !important;
+}
+
 /* Disconnect has red and redGlow variants; neither requires centerButton.
  * Light foreground keeps icon contrast above 3:1 on the raspberry surface.
  */
