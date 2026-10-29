@@ -274,38 +274,68 @@ body,
   }
 }
 
-/* Muted microphone: the verified action label distinguishes this redGlow
- * control from Disconnect. Only recolor the Lottie component's currentColor;
- * the generic active-icon block above intentionally excludes redGlow.
+/* Muted microphone: use the verified action label, not redGlow alone.
+ * The button and nub each sit inside a div under the attached-caret container.
+ * Resolve the microphone state within that container only.
  */
 #app-mount .wrapper__1405b .buttonSection__1405b
-  button[aria-label="Unmute"].centerButton_f1ceac.colorable_f1ceac.redGlow_f1ceac.attachedButton_f1ceac.colorBrand__201d5:not(
+  button[aria-label="Unmute"].centerButton_f1ceac.colorable_f1ceac.redGlow_f1ceac:not(
     :disabled, [disabled], [aria-disabled="true"]
-  )
-  div.lottieIcon__5eb9b.lottieIconColors__5eb9b.centerIcon_f1ceac.controlIcon_f1ceac {
+  ),
+#app-mount .wrapper__1405b .buttonSection__1405b
+  .attachedCaretButtonContainer_f1ceac:has(> div > button[aria-label="Unmute"].centerButton_f1ceac.colorable_f1ceac.redGlow_f1ceac:not(
+    :disabled, [disabled], [aria-disabled="true"]
+  ))
+  > div > .contextMenuNub_f1ceac.colorable_f1ceac.attachedCaret_f1ceac[aria-label="More Microphone Options"]:not(:disabled, [disabled], [aria-disabled="true"]) {
+  background-color: var(--my-accent) !important;
   color: var(--my-background) !important;
+
+  & div.lottieIcon__5eb9b.lottieIconColors__5eb9b.centerIcon_f1ceac.controlIcon_f1ceac {
+    color: var(--my-background) !important;
+  }
+
+  /* Color only the caret SVG root; leave its paths and Lottie trees alone. */
+  &.contextMenuNub_f1ceac > svg.contextMenuCaret_f1ceac {
+    color: var(--my-background) !important;
+  }
 }
 
-/* Disconnect has red and redGlow variants; neither requires centerButton.
- * Light foreground keeps icon contrast above 3:1 on the raspberry surface.
+/* Disconnect lives inside wrapper__1405b, outside buttonSection__1405b.
+ * Match the verified button classes and action label on that descendant.
+ * Keep background overrides for Discord's state colors. The Lottie component
+ * consumes currentColor; preserve its variable and animation tree.
  */
-#app-mount .wrapper__1405b .buttonSection__1405b
-  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]) {
+#app-mount .wrapper__1405b
+  button[aria-label="Disconnect"].colorable_f1ceac.disconnect_f1ceac:not(
+    :disabled, [disabled], [aria-disabled="true"]
+  ) {
   background-color: var(--pw-call-disconnect) !important;
   color: var(--my-text) !important;
+
+  & div.lottieIcon__5eb9b.lottieIconColors__5eb9b.centerIcon_f1ceac.fullRegionIcon_f1ceac.controlIcon_f1ceac {
+    color: var(--my-text) !important;
+  }
 }
 
-#app-mount .wrapper__1405b .buttonSection__1405b
-  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]):hover {
+#app-mount .wrapper__1405b
+  button[aria-label="Disconnect"].colorable_f1ceac.disconnect_f1ceac:not(
+    :disabled, [disabled], [aria-disabled="true"]
+  ):hover {
   background-color: color-mix(in srgb, var(--pw-call-disconnect) 90%, var(--my-background)) !important;
 }
 
-#app-mount .wrapper__1405b .buttonSection__1405b
-  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]):active {
+#app-mount .wrapper__1405b
+  button[aria-label="Disconnect"].colorable_f1ceac.disconnect_f1ceac:not(
+    :disabled, [disabled], [aria-disabled="true"]
+  ):active {
   background-color: color-mix(in srgb, var(--pw-call-disconnect) 80%, var(--my-background)) !important;
 }
 
 /* Inset focus indicator leaves geometry and native animations intact. */
+#app-mount .wrapper__1405b
+  button[aria-label="Disconnect"].colorable_f1ceac.disconnect_f1ceac:not(
+    :disabled, [disabled], [aria-disabled="true"]
+  ):focus-visible,
 #app-mount .wrapper__1405b .buttonSection__1405b
   :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]):focus-visible {
   outline: 2px solid var(--my-text) !important;
