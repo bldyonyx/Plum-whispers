@@ -41,11 +41,12 @@ export default defineConfig({
   build: {
     /*
      * Vencord loads standalone CSS files.
-     * Embed textures and local fonts as Base64 data URLs.
+     * Embed textures, local fonts and animations
+     * as Base64 data URLs.
      */
     assetsInlineLimit: (filePath) => {
       const isThemeTexture =
-        /[/\\]src[/\\]assets[/\\]textures[/\\](dots|hearts|paws)\.jpg$/.test(
+        /[/\\]src[/\\]assets[/\\]textures[/\\](dots|hearts|paws)\.jpg$/i.test(
           filePath,
         );
 
@@ -54,7 +55,12 @@ export default defineConfig({
           filePath,
         );
 
-      return isThemeTexture || isThemeFont ? true : undefined;
+      const isThemeAnimation =
+        /[/\\]src[/\\]assets[/\\]animations[/\\][^/\\]+\.gif$/i.test(filePath);
+
+      return isThemeTexture || isThemeFont || isThemeAnimation
+        ? true
+        : undefined;
     },
 
     outDir:

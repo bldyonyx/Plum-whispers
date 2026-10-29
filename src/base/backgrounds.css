@@ -356,3 +356,52 @@ body,
   background-color: var(--my-surface) !important;
   background-image: none !important;
 }
+
+/* ========================================
+   VOICE ALONE — DOTS & BUNNY
+   ======================================== */
+
+/* Replace the voice-alone gradient with the existing dots texture. */
+#app-mount .singleUserRoot__4ad81 {
+  background-color: var(--my-background) !important;
+
+  background-image:
+    linear-gradient(
+      color-mix(
+        in srgb,
+        var(--texture-dots-overlay)
+          calc(
+            100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
+              100%
+          ),
+        var(--pw-transparent)
+      ),
+      color-mix(
+        in srgb,
+        var(--texture-dots-overlay)
+          calc(
+            100% - var(--texture-dots-enabled) * var(--texture-dots-opacity) *
+              100%
+          ),
+        var(--pw-transparent)
+      )
+    ),
+    url("../assets/textures/dots.jpg") !important;
+
+  background-size: auto, var(--texture-dots-size) !important;
+
+  background-repeat: repeat !important;
+}
+
+/* Replace Discord's illustration with the animated bunny. */
+#app-mount .singleUserRoot__4ad81 .art__4ad81 {
+  content: url("../assets/animations/voice-alone.gif");
+
+  width: 260px;
+  height: 260px;
+
+  object-fit: contain;
+  image-rendering: pixelated;
+
+  transform: translateY(30px);
+}
