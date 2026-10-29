@@ -201,6 +201,106 @@ body,
  */
 
 /* ========================================
+   CALL CONTROLS
+   ======================================== */
+
+/* Match the panel palette without requiring centerButton: split controls and
+ * their context-menu nubs are separate colorable surfaces. Keep the hash prefix
+ * from DevTools so both f1cea and f1ceac suffixes match.
+ * Paint overrides need !important against Discord's state-specific rules;
+ * no global Discord color variables, SVG contents or animations are changed.
+ */
+#app-mount .wrapper__1405b .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]):is(:hover, :focus-visible) {
+  background-color: var(--my-selected) !important;
+}
+
+/* Persistent selection uses the same colors for rest, hover, press and focus.
+ * Also paint a nub when its direct sibling is the selected main control.
+ * The direct-child checks keep unrelated controls in the section independent.
+ */
+#app-mount .wrapper__1405b .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]),
+#app-mount .wrapper__1405b .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]) > [class*="contextMenuNub_f1cea"]:not(:disabled, [disabled], [aria-disabled="true"]),
+#app-mount .wrapper__1405b .buttonSection__1405b
+  :has(> :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]))
+  > [class*="contextMenuNub_f1cea"]:not(:disabled, [disabled], [aria-disabled="true"]) {
+  background-color: var(--my-accent) !important;
+  color: var(--my-background) !important;
+}
+
+/* Active call icons: override an icon's own color, not just its button's.
+ * Reuse the pink surfaces above, including their split-control nubs.
+ * Only currentColor paints are normalized; preserve embedded SVG colors,
+ * unpainted strokes/fills and structural definitions. For the verified Lottie
+ * component, change only its color; leave its variable and animation tree alone.
+ */
+#app-mount .wrapper__1405b .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]):not([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"], [class*="red_f1cea"] *, [class*="redGlow_f1cea"] *, [class*="disconnect_f1cea"] *, :disabled *, [aria-disabled="true"] *),
+#app-mount .wrapper__1405b .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]) > [class*="contextMenuNub_f1cea"]:not(:disabled, [disabled], [aria-disabled="true"]):not([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"], [class*="red_f1cea"] *, [class*="redGlow_f1cea"] *, [class*="disconnect_f1cea"] *, :disabled *, [aria-disabled="true"] *),
+#app-mount .wrapper__1405b .buttonSection__1405b
+  :has(> :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="active_f1cea"], [class*="greenGlow_f1cea"], [aria-pressed="true"], [aria-expanded="true"], [class*="selected_f1cea"]))
+  > [class*="contextMenuNub_f1cea"]:not(:disabled, [disabled], [aria-disabled="true"]):not([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"], [class*="red_f1cea"] *, [class*="redGlow_f1cea"] *, [class*="disconnect_f1cea"] *, :disabled *, [aria-disabled="true"] *) {
+  /* DevTools: --__lottieIconColor: currentColor. Require the active state,
+   * rather than inferring activation from a glow or an open options menu.
+   */
+  &.active_f1ceac
+    div.lottieIcon__5eb9b.lottieIconColors__5eb9b.centerIcon_f1ceac.controlIcon_f1ceac {
+    color: var(--my-background) !important;
+  }
+
+  & svg:not(
+    [class*="lottie" i],
+    [class*="lottie" i] *,
+    [data-animation-type] *,
+    defs *,
+    mask *,
+    clipPath *,
+    symbol *
+  ) {
+    color: var(--my-background) !important;
+
+    & [fill="currentColor"]:not(defs *, mask *, clipPath *, symbol *) {
+      color: var(--my-background) !important;
+      fill: currentColor !important;
+    }
+
+    & [stroke="currentColor"]:not(defs *, mask *, clipPath *, symbol *) {
+      color: var(--my-background) !important;
+      stroke: currentColor !important;
+    }
+  }
+}
+
+/* Disconnect has red and redGlow variants; neither requires centerButton.
+ * Light foreground keeps icon contrast above 3:1 on the raspberry surface.
+ */
+#app-mount .wrapper__1405b .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]) {
+  background-color: var(--pw-call-disconnect) !important;
+  color: var(--my-text) !important;
+}
+
+#app-mount .wrapper__1405b .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]):hover {
+  background-color: color-mix(in srgb, var(--pw-call-disconnect) 90%, var(--my-background)) !important;
+}
+
+#app-mount .wrapper__1405b .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):is([class*="red_f1cea"], [class*="redGlow_f1cea"], [class*="disconnect_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]):active {
+  background-color: color-mix(in srgb, var(--pw-call-disconnect) 80%, var(--my-background)) !important;
+}
+
+/* Inset focus indicator leaves geometry and native animations intact. */
+#app-mount .wrapper__1405b .buttonSection__1405b
+  :is([class*="colorable_f1cea"], [class*="contextMenuNub_f1cea"]):not(:disabled, [disabled], [aria-disabled="true"]):focus-visible {
+  outline: 2px solid var(--my-text) !important;
+  outline-offset: -3px;
+}
+
+/* ========================================
    ROSE WHISPER — CHANNELS & FRIENDS
    ======================================== */
 

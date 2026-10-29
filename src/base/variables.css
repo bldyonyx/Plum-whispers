@@ -86,6 +86,7 @@
   --pw-message-actions-background: #382f38;
   --pw-message-actions-border: #514650;
   --pw-message-actions-shadow: rgba(0, 0, 0, 0.2);
+  --pw-call-disconnect: #b85d78;
 
   /* messages palette */
   --pw-link: #e65a8b;
