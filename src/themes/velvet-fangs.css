@@ -1,0 +1,29 @@
+/**
+* @name Velvet Fangs
+* @description A dark gothic Discord theme with blood-red accents, silver details and vampire-inspired textures.
+* @author onyx
+* @version 1.0.0
+*/
+
+/* Foundation */
+@import url("../velvet-fangs/variables.css");
+
+/* Discord colors */
+:root {
+  --background-base-lowest: var(--vf-background);
+  --background-base-lower: var(--vf-surface);
+  --background-base-low: var(--vf-surface-raised);
+
+  --background-primary: var(--vf-background);
+  --background-secondary: var(--vf-surface);
+  --background-secondary-hover: var(--vf-surface-raised);
+
+  --interactive-normal: var(--vf-silver);
+  --interactive-hover: var(--vf-silver-light);
+  --interactive-active: var(--vf-text);
+
+  --text-normal: var(--vf-text);
+  --text-muted: var(--vf-text-muted);
+
+  --brand-500: var(--vf-accent);
+}

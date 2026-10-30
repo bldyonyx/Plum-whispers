@@ -1,0 +1,28 @@
+/* ===================================
+    VELVET FANGS - VARIABLES
+   =================================== */
+
+:root {
+  /* Backgrounds */
+  --vf-background: #09090b;
+  --vf-surface: #121114;
+  --vf-surface-raised: #1b171a;
+  --vf-hover: #292025;
+
+  /* Blood red */
+  --vf-accent: #a52a36;
+  --vf-accent-hover: #c13b49;
+  --vf-accent-dark: #591b25;
+
+  /* Silver */
+  --vf-silver: #b8b7bd;
+  --vf-silver-light: #d8d6dc;
+  --vf-silver-dark: #77747d;
+
+  /* Text */
+  --vf-text: #e5e1e4;
+  --vf-text-muted: #a09aa1;
+
+  /* Borders */
+  --vf-border: #383037;
+}
