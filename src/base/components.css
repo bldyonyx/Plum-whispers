@@ -717,3 +717,35 @@ body,
 #app-mount [id="guild-header-popout-leave"] svg {
   color: var(--pw-call-disconnect) !important;
 }
+
+/* ========================================
+   CALL CONTROLS — STOP WATCHING
+   ======================================== */
+
+#app-mount
+  .wrapper__1405b
+  button.colorable_f1ceac.disconnect_f1ceac[aria-label="Stop Watching"] {
+  background-color: var(--pw-call-disconnect) !important;
+  color: var(--my-text) !important;
+}
+
+/* Keep the raspberry background on hover and press. */
+#app-mount
+  .wrapper__1405b
+  button.colorable_f1ceac.disconnect_f1ceac[aria-label="Stop Watching"]:hover {
+  background-color: #c7708b !important;
+}
+
+#app-mount
+  .wrapper__1405b
+  button.colorable_f1ceac.disconnect_f1ceac[aria-label="Stop Watching"]:active {
+  background-color: #a64e69 !important;
+}
+
+/* Preserve the light Lottie icon. */
+#app-mount
+  .wrapper__1405b
+  button.colorable_f1ceac.disconnect_f1ceac[aria-label="Stop Watching"]
+  .lottieIconColors__5eb9b {
+  color: var(--my-text) !important;
+}
