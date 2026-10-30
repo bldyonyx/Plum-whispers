@@ -6,18 +6,18 @@
  */
 
 /* Foundation */
-@import "../base/variables.css";
-@import "../base/fonts.css";
-@import "../base/decorative-fonts.css";
-@import "../base/backgrounds.css";
+@import "../plum-whispers/variables.css";
+@import "../plum-whispers/fonts.css";
+@import "../plum-whispers/decorative-fonts.css";
+@import "../plum-whispers/backgrounds.css";
 
 /* Discord interface */
-@import "../base/panels.css";
-@import "../base/messages.css";
-@import "../base/chatbar.css";
-@import "../base/components.css";
-@import "../base/notifications.css";
-@import "../base/settings-controls.css";
+@import "../plum-whispers/panels.css";
+@import "../plum-whispers/messages.css";
+@import "../plum-whispers/chatbar.css";
+@import "../plum-whispers/components.css";
+@import "../plum-whispers/notifications.css";
+@import "../plum-whispers/settings-controls.css";
 
 /* Optional effects */
-@import "../base/animations.css";
+@import "../plum-whispers/animations.css";
